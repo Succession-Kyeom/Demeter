@@ -297,6 +297,22 @@ void Status()
     gotoXY(a-2, b + 15); printf("┗━━━━━━━━━━━━━━━┛");
 }
 
+// 농장 포탈
+void FarmPortal()
+{
+    int x = 2;
+    int y = 22;
+
+    gotoXY(x + 28, y + 4); printf(" \033[0;36m┏━━━━━━━━━━━━┓");
+    gotoXY(x + 28, y + 5); printf("ㅤ데메테르 가게");
+    gotoXY(x + 28, y + 6); printf(" ┗━━━━━━━━━━━━┛\033[0m");
+
+    gotoXY(x + 69, y); printf(" \033[1;33m┏━━━━━┓");
+    gotoXY(x + 69, y + 1); printf("ㅤ 동물");
+    gotoXY(x + 69, y + 3); printf("ㅤ 농장");
+    gotoXY(x + 69, y + 4); printf(" ┗━━━━━┛\033[0m");
+}
+
 // 농장 맵: 밭 
 void MapFarm()
 {
@@ -353,21 +369,6 @@ void MapFarm()
     FarmPortal(); // 농장 포탈 호출
     
 }
-// 농장 포탈
-void FarmPortal()
-{
-    int x = 2;
-    int y = 22;
-
-    gotoXY(x + 28, y + 4); printf(" \033[0;36m┏━━━━━━━━━━━━┓");
-    gotoXY(x + 28, y + 5); printf("ㅤ데메테르 가게");
-    gotoXY(x + 28, y + 6); printf(" ┗━━━━━━━━━━━━┛\033[0m");
-
-    gotoXY(x + 69, y); printf(" \033[1;33m┏━━━━━┓");
-    gotoXY(x + 69, y + 1); printf("ㅤ 동물");
-    gotoXY(x + 69, y + 3); printf("ㅤ 농장");
-    gotoXY(x + 69, y + 4); printf(" ┗━━━━━┛\033[0m");
-}
 
 // 작물 선택
 void Plant()
@@ -394,6 +395,7 @@ void Plant()
     gotoXY(x + 60, y + 6); printf(" ┗━━━━━━━┛");
 
 }
+
 // 거름 선택
 void Poo()
 {
@@ -443,6 +445,7 @@ void Sprout()
     gotoXY(x + 43, y + 7); printf("\033[0;32mV  ㅤ V\033[0m");
 
 }
+
 void Lettuce()
 {
     int x = 6;
@@ -479,6 +482,7 @@ void Lettuce()
     gotoXY(x + 39, y + 7); printf("\033[0;32m    \\--/ \033[0m");
 
 }
+
 void Tomato()
 {
     int x = 6;
@@ -524,6 +528,7 @@ void Tomato()
     gotoXY(x + 40, y + 7); printf("\033[0;31m ((  )\033[0m");
     gotoXY(x + 41, y + 8); printf("\033[0;31m `\"'\033[0m");
 }
+
 void Wheat()
 {
     int x = 4;
@@ -569,6 +574,7 @@ void Wheat()
     gotoXY(x + 41, y + 7); printf("\033[1;33m  \\|/ˇ\033[0m");
     gotoXY(x + 41, y + 8); printf("\033[1;33m   |\033[0m");
 }
+
 void Corn()
 {
     int x = 3;
@@ -601,6 +607,18 @@ void Corn()
     gotoXY(x + 44, y + 3); printf("\\\\\033[1;33m:::\033[1;32m//");
     gotoXY(x + 44, y + 4); printf(" |---|");
     gotoXY(x + 45, y + 5); printf(" :_:\033[0m");
+}
+
+// 바구니
+void Basket()
+{
+    int x = 0;
+    int y = 19;
+
+    gotoXY(x, y); printf("\033[0;33m┏━━━━━━━┓");
+    gotoXY(x, y + 1); printf("│ 바구니│");
+    gotoXY(x, y + 2); printf("┗━━━━━━━┛\033[0m");
+
 }
 
 // 동물 농장: 사육장
@@ -687,6 +705,7 @@ void MapAnimal()
     Basket();
     //animal_portal();
 }
+
 // 동물 농장 포탈
 void AnimalPortal()
 {
@@ -747,6 +766,7 @@ void Cow()
     gotoXY(q, r + 3); printf("||   (__)");
     gotoXY(q, r + 4); printf("||w--||\033[0m");
 }
+
 void Pig()
 {
     int x = 8;
@@ -785,6 +805,7 @@ void Pig()
     gotoXY(q, r + 3); printf("c' '    )@");
     gotoXY(q, r + 4); printf("  ' ' ' '\033[0m");
 }
+
 void Chicken()
 {
     int x = 9;
@@ -829,17 +850,7 @@ void Chicken()
     gotoXY(q, r + 3); printf(" \\_  _/ ");
     gotoXY(q, r + 4); printf("  ][ \033[0m");
 }
-// 바구니
-void Basket()
-{
-    int x = 0;
-    int y = 19;
 
-    gotoXY(x, y); printf("\033[0;33m┏━━━━━━━┓");
-    gotoXY(x, y + 1); printf("│ 바구니│");
-    gotoXY(x, y + 2); printf("┗━━━━━━━┛\033[0m");
-
-}
 // 사료 급여 선택
 void Peed()
 {
@@ -857,6 +868,7 @@ void Peed()
     gotoXY(x + 40, y + 5); printf("ㅤ 아니요");
     gotoXY(x + 40, y + 6); printf(" ┗━━━━━━━┛");
 }
+
 // 동물 배치 선택
 void Arr()
 {
@@ -880,6 +892,37 @@ void Arr()
     gotoXY(x + 40, y + 4); printf("ㅤㅤㅤ 닭");
     gotoXY(x + 40, y + 5); printf("ㅤ  보유: n");
     gotoXY(x + 40, y + 6); printf(" ┗━━━━━━━━━━┛");
+}
+
+// 스킬 메뉴
+void PcSkill()
+{
+    int x = 6;
+    int y = 4;
+
+    // 칸 1
+    gotoXY(x, y + 1); printf("도구함 - 5,000원");
+    gotoXY(x, y + 3); printf("▶ 여러 장비를 보관할 수 있다!");
+    gotoXY(x, y + 4); printf("\033[1;34m스킬 트리 개방\033[0m");
+
+    // 칸 2
+    gotoXY(x, y + 6); printf("달구지 - 10,000원");
+    gotoXY(x, y + 8); printf("▶ 소를 데려와 밭을 쉽게 갈 수 있다!");
+    gotoXY(x, y + 9); printf("\033[1;34m밭+1 사육장+1 소+1\033[0m");
+
+    // 칸 3
+    gotoXY(x, y + 11); printf("경운기 - 25,000원");
+    gotoXY(x, y + 13); printf("▶ 밭을 어마어마하게 쉽게 갈 수 있다!");
+    gotoXY(x, y + 14); printf("\033[1;34m밭+1\033[0m");
+
+    // 칸 4
+    gotoXY(x, y + 16); printf("외양간 - 10,000원");
+    gotoXY(x, y + 18); printf("▶ 동물을 더 많이 관리할 수 있다!");
+    gotoXY(x, y + 19); printf("\033[1;34m사육장+1\033[0m");
+
+    gotoXY(x + 60, y + 20); printf(" \033[1;34m┏━━━━━━━━━┓");
+    gotoXY(x + 60, y + 21); printf("ㅤ 스킬트리");
+    gotoXY(x + 60, y + 22); printf(" ┗━━━━━━━━━┛\033[0m");
 }
 
 // PC 화면
@@ -986,8 +1029,9 @@ void PcOrder()
     //pc_menu1();
     //pc_menu2();
     //pc_menu3();
-    PcSkil();
+    PcSkill();
 }
+
 // PC 메뉴
 void PcMenu1()
 {
@@ -1087,35 +1131,15 @@ void PcPur()
 
     gotoXY(x, y + 10); printf("└───────────────────────────────┘");
 }
-// 스킬 메뉴
-void PcSkil()
+
+void Recipe()
 {
-    int x = 6;
-    int y = 4;
+    int x = 1;
+    int y = 22;
 
-    // 칸 1
-    gotoXY(x, y + 1); printf("도구함 - 5,000원");
-    gotoXY(x, y + 3); printf("▶ 여러 장비를 보관할 수 있다!");
-    gotoXY(x, y + 4); printf("\033[1;34m스킬 트리 개방\033[0m");
-
-    // 칸 2
-    gotoXY(x, y + 6); printf("달구지 - 10,000원");
-    gotoXY(x, y + 8); printf("▶ 소를 데려와 밭을 쉽게 갈 수 있다!");
-    gotoXY(x, y + 9); printf("\033[1;34m밭+1 사육장+1 소+1\033[0m");
-
-    // 칸 3
-    gotoXY(x, y + 11); printf("경운기 - 25,000원");
-    gotoXY(x, y + 13); printf("▶ 밭을 어마어마하게 쉽게 갈 수 있다!");
-    gotoXY(x, y + 14); printf("\033[1;34m밭+1\033[0m");
-
-    // 칸 4
-    gotoXY(x, y + 16); printf("외양간 - 10,000원");
-    gotoXY(x, y + 18); printf("▶ 동물을 더 많이 관리할 수 있다!");
-    gotoXY(x, y + 19); printf("\033[1;34m사육장+1\033[0m");
-
-    gotoXY(x + 60, y + 20); printf(" \033[1;34m┏━━━━━━━━━┓");
-    gotoXY(x + 60, y + 21); printf("ㅤ 스킬트리");
-    gotoXY(x + 60, y + 22); printf(" ┗━━━━━━━━━┛\033[0m");
+    gotoXY(x - 1, y); printf("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+    gotoXY(x, y + 1); printf("★ 레시피");
+    gotoXY(x, y + 3); printf("선택된 메뉴의 레시피 출력");
 }
 
 // 가게
@@ -1288,15 +1312,6 @@ void Store()
 
     Recipe();
 }
-void Recipe()
-{
-    int x = 1;
-    int y = 22;
-
-    gotoXY(x - 1, y); printf("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-    gotoXY(x, y + 1); printf("★ 레시피");
-    gotoXY(x, y + 3); printf("선택된 메뉴의 레시피 출력");
-}
 
 void StoreClose()
 {
@@ -1330,6 +1345,7 @@ void StoreClose()
     gotoXY(x, y + 10); printf("└----------------------------------------------┘");
 
 }
+
 void StoreCal()
 {
     int x = 14;
@@ -1423,7 +1439,6 @@ void PlayerFront()
     gotoXY(x, y+1); printf("(o o)");
     gotoXY(x, y+2); printf(" ( )");
 }
-
 void PlayerBack()
 {
     int x = 1;
@@ -1433,7 +1448,6 @@ void PlayerBack()
     gotoXY(x, y + 1); printf("(   )");
     gotoXY(x, y + 2); printf(" ( )");
 }
-
 void PlayerRight()
 {
     int x = 1;
@@ -1443,7 +1457,6 @@ void PlayerRight()
     gotoXY(x, y + 1); printf("(@ o)");
     gotoXY(x, y + 2); printf(" ( )");
 }
-
 void PlayerLeft()
 {
     int x = 1;

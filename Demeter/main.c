@@ -81,49 +81,6 @@ void MainMenu() {
 	}
 }
 
-		gotoXY(0, 0);
-		printf("  게임 시작\n");
-		printf("  게임 설명\n");
-		printf("  게임 종료\n");
-
-		gotoXY(x, y);
-		printf(">");
-		input = _getch();
-		if (input == ARROW) {
-			input = _getch();
-			switch (input) {
-			case UP:
-				if (y <= 0) {
-					y = 0;
-				}
-				else {
-					y--;
-				}
-				break;
-			case DOWN:
-				if (y >= 2) {
-					y = 2;
-				}
-				else {
-					y++;
-				}
-				break;
-			}
-		}
-		else if (input == ENTER) {
-			if (y == 0) {
-				GameStart();
-			}
-			else if (y == 1) {
-				HowToPlay();
-			}
-			else if (y == 2) {
-				exit(0);
-			}
-		}
-	}
-}
-
 int main() {
 	int x = 0;
 	int y = 0;
