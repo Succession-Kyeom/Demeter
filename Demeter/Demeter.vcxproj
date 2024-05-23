@@ -131,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="control.h" />
+    <ClInclude Include="description.h" />
     <ClInclude Include="graphic.h" />
     <ClInclude Include="init.h" />
     <ClInclude Include="structure.h" />
