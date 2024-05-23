@@ -11,13 +11,6 @@
 #define STORE_ROW 30
 #define STORE_COL 80
 
-void PrintStatus() {
-	char* ingredientName[8] = { "달걀", "우유", "양상추", "토마토", "밀", "옥수수", "오이", "비료" };
-	for (int index = 0; index < 8; index++) {
-		printf("%-8s: %4d\n", ingredientName[index], status.ingredient[index]);
-	}
-}
-
 void GameStart() {
 
 }

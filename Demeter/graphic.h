@@ -217,7 +217,7 @@ void ManualEvent()
     gotoXY(x, y + 9); printf("멋지게 가게를 운영해보세용~ㅎ.ㅎ");
 }
 
-// 불러오기
+// 불러오기 
 void Load()
 {
     int x = 2;
@@ -316,7 +316,7 @@ void FarmPortal()
 // 농장 맵: 밭 
 void MapFarm()
 {
-    int x = 1;
+    int x = 1;  
     int y = 7;
 
     // 밭 1
