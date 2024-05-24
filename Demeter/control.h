@@ -11,12 +11,18 @@
 #define ENTER 13
 #define ESC 27
 
+//bool 지정
 #define TRUE 1
 #define FALSE 0
 
+//맵 키코드
 #define FARM 0
 #define STORE 1
 #define ANIMAL 2
+
+//텍스트 색상
+#define NONE "\033[0m"
+#define GREEN "\033[0;32m"
 
 //커서 좌표 이동
 void gotoXY(int x, int y) {

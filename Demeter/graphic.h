@@ -291,7 +291,7 @@ void Status()
     gotoXY(a-2, b); printf("┏━━━━━━━━━━━━━━━┓");
     gotoXY(a, b + 1); printf("ㅤㅤ상태창");
     gotoXY(a, b + 2); printf("DAY %2d", status.day);
-    gotoXY(a, b + 3); printf("보유 금액: %3d원", status.money);
+    gotoXY(a, b + 3); printf("보유 금액:%4d원", status.money);
     gotoXY(a, b + 5); printf("< 재료 >");
     
     gotoXY(a, b + 6); printf("달걀:     %2d", status.egg);
@@ -1037,7 +1037,7 @@ void PcSkill()
 }
 
 // PC 화면
-void PcOrder(int screen)
+void PcOrder(int screen, char** color)
 {
     int x = 4;
     int z = 52;
@@ -1060,8 +1060,8 @@ void PcOrder(int screen)
     gotoXY(z - 8, y + 4); printf("│");
     gotoXY(z, y + 4); printf("│");
 
-    gotoXY(z - 5, y + 2); printf("발주");
-    gotoXY(z - 5, y + 3); printf("신청");
+    gotoXY(z - 5, y + 2); printf("%s발주", color[0]);
+    gotoXY(z - 5, y + 3); printf("신청%s", NONE);
 
     // 칸 2
     gotoXY(x, y + 5); printf("├───────────────────────────────────────────────┤");
@@ -1079,8 +1079,8 @@ void PcOrder(int screen)
     gotoXY(z - 8, y + 9); printf("│");
     gotoXY(z, y + 9); printf("│");
 
-    gotoXY(z - 5, y + 7); printf("발주");
-    gotoXY(z - 5, y + 8); printf("신청");
+    gotoXY(z - 5, y + 7); printf("%s발주", color[1]);
+    gotoXY(z - 5, y + 8); printf("신청%s", NONE);
 
     // 칸 3
     gotoXY(x, y + 10); printf("├───────────────────────────────────────────────┤");
@@ -1098,8 +1098,8 @@ void PcOrder(int screen)
     gotoXY(z - 8, y + 14); printf("│");
     gotoXY(z, y + 14); printf("│");
 
-    gotoXY(z - 5, y + 12); printf("발주");
-    gotoXY(z - 5, y + 13); printf("신청");
+    gotoXY(z - 5, y + 12); printf("%s발주", color[2]);
+    gotoXY(z - 5, y + 13); printf("신청%s", NONE);
 
     // 칸 4
     gotoXY(x, y + 15); printf("├───────────────────────────────────────────────┤");
@@ -1117,8 +1117,8 @@ void PcOrder(int screen)
     gotoXY(z - 8, y + 19); printf("│");
     gotoXY(z, y + 19); printf("│");
     
-    gotoXY(z - 5, y + 17); printf("발주");
-    gotoXY(z - 5, y + 18); printf("신청");
+    gotoXY(z - 5, y + 17); printf("%s발주", color[3]);
+    gotoXY(z - 5, y + 18); printf("신청%s", NONE);
 
     gotoXY(x, y + 20); printf("└───────────────────────────────────────────────┘");
     gotoXY(z - 8, y + 20); printf("┴");

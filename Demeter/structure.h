@@ -30,6 +30,24 @@ typedef struct List {
 }List;
 //--
 
+//스킬트리 구조체--
+typedef struct Skill {
+	bool isBought; //구매 여부
+	char* name; //스킬명
+	char* descript; //스킬 설명
+	char* effect; //스킬 효과
+	int money; //구매 비용
+}Skill;
+
+typedef struct SkillTree {
+	struct SkillTree* left;
+	struct Skill skill;
+	struct SkillTree* right;
+}SkillTree;
+
+SkillTree *skillTree;
+//--
+
 //세이브 데이터--
 typedef struct data {
 	struct data* nextDay;

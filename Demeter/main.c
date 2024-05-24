@@ -18,21 +18,37 @@ int random(int degree) {
 }
 
 void GoStore() {
-	int screen = 0; //PC 화면 전환용
+	int y = 0;
+	int screen = 0; //PC 화면 인덱스
+	char* color[4] = { NONE, NONE, NONE, NONE };
 
 	system("cls");
 	while (TRUE) {
 		system("cls");
-		PcOrder(screen);
+		color[y] = GREEN;
+		PcOrder(screen, color);
 		Status();
 		switch (_getch()) {
+		case UP:
+			if (y > 0) {
+				color[y] = NONE;
+				y--;
+			}
+			break;
 		case LEFT:
 			screen = ((screen - 1) + 4) % 4;
 			break;
 		case RIGHT:
 			screen = ((screen + 1) + 4) % 4;
 			break;
+		case DOWN:
+			if (y < 3) {
+				color[y] = NONE;
+				y++;
+			}
+			break;
 		case ENTER:
+			
 			break;
 		case ESC:
 			return;
@@ -143,7 +159,7 @@ void InsertList(List* prev, Order order) {
 
 //장사 시작
 void StartSales() {
-	int max = random(6) + 5; //하루 최대 손님 수(5 ~ 10명)
+	int max = (rand() % 6) + 5; //하루 최대 손님 수(5 ~ 10명)
 	int sandwitch = rand() % 3;
 	List* pick = (List*)malloc(sizeof(List));
 	if (status.day == 1) { //첫 날만 3명 고정

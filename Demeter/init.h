@@ -4,13 +4,10 @@
 
 #include "structure.h"
 
-#define STORE_ROW 30
-#define STORE_COL 80
-
 //상태창 초기화
 void StatusInit() {
 	status.day = 1;
-	status.money = 1000;
+	status.money = 100000;
 	status.income = 0;
 	
 	status.egg = 99;
@@ -42,4 +39,19 @@ void MenuInit() {
 	menu.cost[5] = 13000;
 	menu.cost[6] = 13000;
 	menu.cost[7] = 20000;
+}
+
+//스킬 트리 초기화
+void SkillInit() {
+	Skill skill[8] = { {FALSE, "도구함", "여러 장비를 보관할 수 있다!", "스킬 트리를 개방할 수 있다.", 5000},
+		{FALSE, "달구지", "밭을 더 쉽게 갈 수 있다!", "밭의 개수가 1개 추가된다.", 10000},
+		{FALSE, "할인쿠폰", "물건을 싸게 구매할 수 있다.", "PC창에서 구매하는 모든 상품(스킬 제외)이 5% 할인된다.", 15000},
+		{FALSE, "외양간", "동물을 더 많이 관리할 수 있다!", "동물 농장의 크기가 1 증가한다.", 10000},
+		{FALSE, "경운기", "밭을 어마어마하게 쉽게 갈 수 있다!", "밭의 개수가 1개 추가된다.", 25000},
+		{FALSE, "마네키네코", "수익이 늘어날 것 같은 기분이 든다!", "모든 메뉴의 가격이 500원 증가한다.", 30000},
+		{FALSE, "---", "---", "---", 0},
+		{FALSE, "외양간 확장", "동물을 더 많이 관리할 수 있다.", "동물 농장의 크기가 1 증가한다.", 25000} };
+	SkillTree skillTree[8];
+
+	
 }
