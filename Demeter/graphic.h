@@ -223,7 +223,7 @@ void ManualEvent()
     gotoXY(x, y + 9); printf("멋지게 가게를 운영해보세용~ㅎ.ㅎ");
 }
 
-// 불러오기 
+// 불러오기
 void Load()
 {
     int x = 2;
@@ -282,7 +282,7 @@ void Load()
     gotoXY(x, y + 22); printf("||||                          |                          ");
 }
 
-// 상태창
+//상태창
 void Status()
 {
     int a = 64;
@@ -294,14 +294,14 @@ void Status()
     gotoXY(a, b + 3); printf("보유 금액:%4d원", status.money);
     gotoXY(a, b + 5); printf("< 재료 >");
     
-    gotoXY(a, b + 6); printf("달걀:     %2d", status.egg);
-    gotoXY(a, b + 7); printf("우유:     %2d", status.milk);
-    gotoXY(a, b + 8); printf("돼지고기: %2d", status.pork);
-    gotoXY(a, b + 9); printf("양상추:   %2d", status.cabbage);
-    gotoXY(a, b + 10); printf("토마토:   %2d", status.tomato);
-    gotoXY(a, b + 11); printf("밀:       %2d", status.wheat);
-    gotoXY(a, b + 12); printf("옥수수:   %2d", status.corn);
-    gotoXY(a, b + 13); printf("비료:     %2d", status.compost);
+    gotoXY(a, b + 6); printf("달걀:%2d", status.egg);
+    gotoXY(a, b + 7); printf("우유:%2d", status.milk);
+    gotoXY(a, b + 8); printf("돼지고기:%2d", status.pork);
+    gotoXY(a, b + 9); printf("양상추:%2d", status.cabbage);
+    gotoXY(a, b + 10); printf("토마토:%2d", status.tomato);
+    gotoXY(a, b + 11); printf("밀:%2d", status.wheat);
+    gotoXY(a, b + 12); printf("옥수수:%2d", status.corn);
+    gotoXY(a, b + 13); printf("비료:%2d", status.compost);
     gotoXY(a-2, b + 15); printf("┗━━━━━━━━━━━━━━━┛");
 }
 
@@ -912,20 +912,20 @@ void PcMenu1()
     int y = 4;
 
     // 칸 1
-    gotoXY(x, y + 1); printf("달걀");
-    gotoXY(x, y + 3); printf("구매금액: 2,000원");
+    gotoXY(x, y + 1); printf("%s", pc[0].item[0]);
+    gotoXY(x, y + 3); printf("구매금액: %d원", pc[0].money[0]);
 
     // 칸 2
-    gotoXY(x, y + 6); printf("우유");
-    gotoXY(x, y + 8); printf("구매금액: 4,000원");
+    gotoXY(x, y + 6); printf("%s", pc[0].item[1]);
+    gotoXY(x, y + 8); printf("구매금액: %d원", pc[0].money[1]);
 
     // 칸 3
-    gotoXY(x, y + 11); printf("양상추");
-    gotoXY(x, y + 13); printf("구매금액: 3,000원");
+    gotoXY(x, y + 11); printf("%s", pc[0].item[2]);
+    gotoXY(x, y + 13); printf("구매금액: %d원", pc[0].money[2]);
 
     // 칸 4
-    gotoXY(x, y + 16); printf("토마토");
-    gotoXY(x, y + 18); printf("구매금액: 2,000원");
+    gotoXY(x, y + 16); printf("%s", pc[0].item[3]);
+    gotoXY(x, y + 18); printf("구매금액: %d원", pc[0].money[3]);
 
 }
 void PcMenu2()
@@ -934,20 +934,21 @@ void PcMenu2()
     int y = 4;
 
     // 칸 1
-    gotoXY(x, y + 1); printf("밀");
-    gotoXY(x, y + 3); printf("구매금액: 2,000원");
+    gotoXY(x, y + 1); printf("%s", pc[1].item[0]);
+    gotoXY(x, y + 3); printf("구매금액: %d원", pc[1].money[0]);
 
     // 칸 2
-    gotoXY(x, y + 6); printf("옥수수");
-    gotoXY(x, y + 8); printf("구매금액: 4,000원");
+    gotoXY(x, y + 6); printf("%s", pc[1].item[1]);
+    gotoXY(x, y + 8); printf("구매금액: %d원", pc[1].money[1]);
 
     // 칸 3
-    gotoXY(x, y + 11); printf("돼지고기");
-    gotoXY(x, y + 13); printf("구매금액: 3,000원");
-
+    gotoXY(x, y + 11); printf("%s", pc[1].item[2]);
+    gotoXY(x, y + 13); printf("구매금액: %d원", pc[1].money[2]);
+    
     // 칸 4
     gotoXY(x, y + 16); printf("--");
     gotoXY(x, y + 18); printf("--");
+
 }
 void PcMenu3()
 {
@@ -955,22 +956,22 @@ void PcMenu3()
     int y = 4;
 
     // 칸 1
-    gotoXY(x, y + 1); printf("돼지");
-    gotoXY(x, y + 3); printf("구매금액: 8,000원");
+    gotoXY(x, y + 1); printf("%s", pc[2].item[0]);
+    gotoXY(x, y + 3); printf("구매금액: %d원", pc[2].money[0]);
 
     // 칸 2
-    gotoXY(x, y + 6); printf("소");
-    gotoXY(x, y + 8); printf("구매금액: 9,000원");
+    gotoXY(x, y + 6); printf("%s", pc[2].item[1]);
+    gotoXY(x, y + 8); printf("구매금액: %d원", pc[2].money[1]);
 
     // 칸 3
-    gotoXY(x, y + 11); printf("닭");
-    gotoXY(x, y + 13); printf("구매금액: 8,500원");
+    gotoXY(x, y + 11); printf("%s", pc[2].item[2]);
+    gotoXY(x, y + 13); printf("구매금액: %d원", pc[2].money[2]);
 
     // 칸 4
     gotoXY(x, y + 16); printf("--");
     gotoXY(x, y + 18); printf("--");
 }
-void PcPur()
+void PcPur(int screen, int index)
 {
     int x = 20;
     int z = 52;
@@ -985,13 +986,13 @@ void PcPur()
 
     gotoXY(x, y + 3); printf("│");
     gotoXY(z, y + 3); printf("│");
-    gotoXY(x + 3, y + 3); printf("달걀을 몇 개 구입하겠습니까?"); // 다른 건 변수로 하면 되지 않을가용~? 난 코딩몰루
+    gotoXY(x + 3, y + 3); printf("%s을 몇 개 구입하겠습니까?", pc[screen].item[index]);
 
     gotoXY(x, y + 4); printf("│");
     gotoXY(z, y + 4); printf("│");
     gotoXY(x, y + 5); printf("│");
     gotoXY(z, y + 5); printf("│");
-    gotoXY(x + 3, y + 5); printf("5개 이상 구매 시 10% 할인");
+    gotoXY(x + 3, y + 5); printf("5개 이상 구매 시 10%% 할인");
 
     gotoXY(x, y + 6); printf("│");
     gotoXY(z, y + 6); printf("│");
@@ -1012,9 +1013,9 @@ void PcSkill()
     int y = 4;
 
     // 칸 1
-    gotoXY(x, y + 1); printf("도구함 - 5,000원");
-    gotoXY(x, y + 3); printf("▶ 여러 장비를 보관할 수 있다!");
-    gotoXY(x, y + 4); printf("\033[1;34m스킬 트리 개방\033[0m");
+    gotoXY(x, y + 1); printf("%s - %d원", skillTree->skill.name, skillTree->skill.money);
+    gotoXY(x, y + 3); printf("▶ %s", skillTree->skill.descript);
+    gotoXY(x, y + 4); printf("\033[1;34m%s\033[0m", skillTree->skill.effect);
 
     // 칸 2
     gotoXY(x, y + 6); printf("달구지 - 10,000원");
@@ -1154,28 +1155,47 @@ void PcOrder(int screen, char** color)
     }
 }
 
-void Recipe()
+void Recipe(List* pick, int index)
 {
     int x = 1;
     int y = 22;
+    List* p = pick->next;
 
     gotoXY(x - 1, y); printf("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
     gotoXY(x, y + 1); printf("★ 레시피");
-    gotoXY(x, y + 3); printf("선택된 메뉴의 레시피 출력");
+    for (int i = 0; i < index; i++) {
+        p = p->next;
+    }
+    gotoXY(x, y + 3); printf("%s", p->order.recipe);
 }
 
 // 가게
-void Store()
+void Store(List* pick, int index)
 {
     int x = 0;
     int y = 1;
     int a = 15;
     int b = 30;
     int c = 45;
+    int x2 = 2;
+    char* color[4] = { NONE, NONE, NONE, NONE };
 
+    color[index] = GREEN;
     Frame();
     gotoXY(x, y); printf("\033[0;33m┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
     gotoXY(x, y + 1); printf("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\033[0m");
+
+    for (List* p = pick->next; p != pick && x2 <= 47; p = p->next, x2 += 15) {
+        gotoXY(x2, y + 2); printf("주문 번호");
+        gotoXY(x2, y + 3); printf("%2d", p->order.orderNum);
+        gotoXY(x2, y + 5); printf("메뉴 이름");
+        gotoXY(x2, y + 6); printf("%s", p->order.menu);
+        gotoXY(x2, y + 8); printf("금액");
+        gotoXY(x2, y + 9); printf("%d", p->order.cost);
+        gotoXY(x2 + 2, y + 11); printf("┏━━━━━┓");
+        gotoXY(x2 + 2, y + 12); printf("ㅤ%s제작%s", color[x2 / 15], NONE);
+        gotoXY(x2 + 2, y + 13); printf("┗━━━━━┛");
+    }
 
     // 주문서 1
     gotoXY(x, y + 2); printf("│");
@@ -1191,16 +1211,6 @@ void Store()
     gotoXY(x, y + 12); printf("│");
     gotoXY(x, y + 13); printf("│");
     gotoXY(x, y + 14); printf("└────────────");
-
-    gotoXY(x + 2, y + 2); printf("주문 번호");
-    gotoXY(x + 2, y + 3); printf("%2d", 00);
-    gotoXY(x + 2, y + 5); printf("메뉴 이름");
-    gotoXY(x + 2, y + 6); printf("(메뉴명)");
-    gotoXY(x + 2, y + 8); printf("금액");
-    gotoXY(x + 2, y + 9); printf("1111");
-    gotoXY(x + 4, y + 11); printf("┏━━━━━┓");
-    gotoXY(x + 4, y + 12); printf("ㅤ제작");
-    gotoXY(x + 4, y + 13); printf("┗━━━━━┛");
 
     gotoXY(a - 1, y + 2); printf("│");
     gotoXY(a - 1, y + 3); printf("│");
@@ -1231,16 +1241,6 @@ void Store()
     gotoXY(a, y + 13); printf("│");
     gotoXY(a, y + 14); printf("└────────────");
 
-    gotoXY(a + 2, y + 2); printf("주문 번호");
-    gotoXY(a + 2, y + 3); printf("nn");
-    gotoXY(a + 2, y + 5); printf("메뉴 이름");
-    gotoXY(a + 2, y + 6); printf("(메뉴명)");
-    gotoXY(a + 2, y + 8); printf("금액");
-    gotoXY(a + 2, y + 9); printf("(금액)");
-    gotoXY(a + 4, y + 11); printf("┏━━━━━┓");
-    gotoXY(a + 4, y + 12); printf("ㅤ제작");
-    gotoXY(a + 4, y + 13); printf("┗━━━━━┛");
-
     gotoXY(b - 1, y + 2); printf("│");
     gotoXY(b - 1, y + 3); printf("│");
     gotoXY(b - 1, y + 4); printf("│");
@@ -1269,16 +1269,6 @@ void Store()
     gotoXY(b, y + 12); printf("│");
     gotoXY(b, y + 13); printf("│");
     gotoXY(b, y + 14); printf("└────────────");
-
-    gotoXY(b + 2, y + 2); printf("주문 번호");
-    gotoXY(b + 2, y + 3); printf("nn");
-    gotoXY(b + 2, y + 5); printf("메뉴 이름");
-    gotoXY(b + 2, y + 6); printf("(메뉴명)");
-    gotoXY(b + 2, y + 8); printf("금액");
-    gotoXY(b + 2, y + 9); printf("(금액)");
-    gotoXY(b + 4, y + 11); printf("┏━━━━━┓");
-    gotoXY(b + 4, y + 12); printf("ㅤ제작");
-    gotoXY(b + 4, y + 13); printf("┗━━━━━┛");
 
     gotoXY(c - 1, y + 2); printf("│");
     gotoXY(c - 1, y + 3); printf("│");
@@ -1309,16 +1299,6 @@ void Store()
     gotoXY(c, y + 13); printf("│");
     gotoXY(c, y + 14); printf("└────────────");
 
-    gotoXY(c + 2, y + 2); printf("주문 번호");
-    gotoXY(c + 2, y + 3); printf("nn");
-    gotoXY(c + 2, y + 5); printf("메뉴 이름");
-    gotoXY(c + 2, y + 6); printf("(메뉴명)");
-    gotoXY(c + 2, y + 8); printf("금액");
-    gotoXY(c + 2, y + 9); printf("(금액)");
-    gotoXY(c + 4, y + 11); printf("┏━━━━━┓");
-    gotoXY(c + 4, y + 12); printf("ㅤ제작");
-    gotoXY(c + 4, y + 13); printf("┗━━━━━┛");
-
     gotoXY(c + 14, y + 2); printf("│");
     gotoXY(c + 14, y + 3); printf("│");
     gotoXY(c + 14, y + 4); printf("│");
@@ -1333,7 +1313,7 @@ void Store()
     gotoXY(c + 14, y + 13); printf("│");
     gotoXY(c + 14, y + 14); printf("┘");
 
-    Recipe();
+    Recipe(pick, index);
 }
 
 void StoreClose()
@@ -1341,6 +1321,7 @@ void StoreClose()
     int x = 10;
     int y = 10;
 
+    Frame();
     gotoXY(x + 10, y + 4); printf("\033[1;34m오늘의 장사가 종료 되었습니다.");
     gotoXY(x + 13, y + 5); printf("장사 결과를 확인하세요!");
     gotoXY(x + 39, y + 9); printf("\033[1;35m▷ Enter\033[0m");
@@ -1374,6 +1355,7 @@ void StoreCal()
     int x = 14;
     int y = 3;
 
+    Frame();
     gotoXY(x, y); printf("   \033[0;33m______________________________");
     gotoXY(x, y + 1); printf(" / \\                             \\.");
     gotoXY(x, y + 2); printf("|   |                            |.");
@@ -1396,19 +1378,19 @@ void StoreCal()
     gotoXY(x, y + 19); printf("    |  /                            /.");
     gotoXY(x, y + 20); printf("    \\_/____________________________/.\033[0m");
 
-    gotoXY(x + 8, y + 2); printf("\033[1;34m온 손님의 수: n");
-    gotoXY(x + 8, y + 3); printf("순 이익: n\033[0m");
+    gotoXY(x + 8, y + 2); printf("\033[1;34m온 손님의 수: %d", account.customer);
+    gotoXY(x + 8, y + 3); printf("순 이익: %d\033[0m", account.income);
     gotoXY(x + 8, y + 5); printf("- 판매된 메뉴");
-    gotoXY(x + 11, y + 6); printf("계란후라이: n");
-    gotoXY(x + 11, y + 7); printf("팝콘: n");
-    gotoXY(x + 11, y + 8); printf("베이컨: n");
-    gotoXY(x + 11, y + 9); printf("빵: n");
-    gotoXY(x + 11, y + 10); printf("달걀 토스트: n");
-    gotoXY(x + 11, y + 11); printf("피자빵: n");
-    gotoXY(x + 11, y + 12); printf("샐러드: n");
-    gotoXY(x + 11, y + 13); printf("샌드위치: n");
-    gotoXY(x + 8, y + 15); printf("주문 취소 횟수: n");
-    gotoXY(x + 8, y + 17); printf("\033[1;31m가게세 지불까지 n일");
+    gotoXY(x + 11, y + 6); printf("계란후라이: %d", account.menu[0]);
+    gotoXY(x + 11, y + 7); printf("팝콘: %d", account.menu[1]);
+    gotoXY(x + 11, y + 8); printf("베이컨: %d", account.menu[2]);
+    gotoXY(x + 11, y + 9); printf("빵: %d", account.menu[3]);
+    gotoXY(x + 11, y + 10); printf("달걀 토스트: %d", account.menu[4]);
+    gotoXY(x + 11, y + 11); printf("피자빵: %d", account.menu[5]);
+    gotoXY(x + 11, y + 12); printf("샐러드: %d", account.menu[6]);
+    gotoXY(x + 11, y + 13); printf("샌드위치: %d", account.menu[7]);
+    gotoXY(x + 8, y + 15); printf("주문 취소 횟수: %d", account.cancel);
+    gotoXY(x + 8, y + 17); printf("\033[1;31m가게세 지불까지 %d일", account.dDay);
     gotoXY(x + 35, y + 22); printf("\033[1;35m▷ Enter\033[0m");
 }
 
@@ -1418,6 +1400,7 @@ void BadEnd()
     int x = 1;
     int y = 1;
 
+    Frame();
     gotoXY(x, y); printf("     \033[0;33m_________________________________________________");
     gotoXY(x, y + 1); printf("    /\\                                                \\");
     gotoXY(x, y + 2); printf("(O)===)><><><><><><><><><><><><><><><><><><><><><><><><)==(O)");

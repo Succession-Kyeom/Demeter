@@ -22,6 +22,7 @@
 
 //텍스트 색상
 #define NONE "\033[0m"
+#define RED "\033[0;31m"
 #define GREEN "\033[0;32m"
 
 //커서 좌표 이동
@@ -32,10 +33,10 @@ void gotoXY(int x, int y) {
 }
 
 //커서 지우기
-void CursorView() {
+void CursorView(int visible) {
 	CONSOLE_CURSOR_INFO cursorInfo = { 0 };
 
 	cursorInfo.dwSize = 1;
-	cursorInfo.bVisible = FALSE;
+	cursorInfo.bVisible = visible;
 	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursorInfo);
 }
