@@ -136,6 +136,7 @@
     <ClInclude Include="init.h" />
     <ClInclude Include="preparation.h" />
     <ClInclude Include="structure.h" />
+    <ClInclude Include="temp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

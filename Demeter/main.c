@@ -364,9 +364,10 @@ int main() {
 
 	//초기값 설정
 	StatusInit();
+	//skill = SkillInit();
 	PcInit();
 	MenuInit();
-	SkillInit();
+	
 	CursorView(FALSE);
 	srand(time(NULL));
 

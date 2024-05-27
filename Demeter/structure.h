@@ -57,14 +57,7 @@ typedef struct Skill {
 	int money; //구매 비용
 }Skill;
 
-typedef struct SkillTree {
-	struct SkillTree* left;
-	struct Skill skill;
-	struct SkillTree* right;
-}SkillTree;
-
-SkillTree *skillTree;
-SkillTree skillNode[8];
+Skill* skill[8];
 //--
 
 //세이브 데이터--

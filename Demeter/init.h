@@ -105,38 +105,16 @@ void PcInit() {
 }
 
 //스킬 트리 초기화
-void SkillInit() {
-	Skill skill[8] = { {FALSE, "도구함", "여러 장비를 보관할 수 있다!", "스킬 트리를 개방할 수 있다.", 5000},
-					   {FALSE, "달구지", "밭을 더 쉽게 갈 수 있다!", "밭의 개수가 1개 추가된다.", 10000},
-					   {FALSE, "할인쿠폰", "물건을 싸게 구매할 수 있다.", "PC창에서 구매하는 모든 상품(스킬 제외)이 5% 할인된다.", 15000},
-					   {FALSE, "외양간", "동물을 더 많이 관리할 수 있다!", "동물 농장의 크기가 1 증가한다.", 10000},
-					   {FALSE, "경운기", "밭을 어마어마하게 쉽게 갈 수 있다!", "밭의 개수가 1개 추가된다.", 25000},
-					   {FALSE, "마네키네코", "수익이 늘어날 것 같은 기분이 든다!", "모든 메뉴의 가격이 500원 증가한다.", 30000},
-					   {FALSE, "---", "---", "---", 0},
-					   {FALSE, "외양간 확장", "동물을 더 많이 관리할 수 있다.", "동물 농장의 크기가 1 증가한다.", 25000} };
-	for (int index = 0; index < 3; index++) {
-		skillNode[index].left = &skillNode[index * 2 + 1];
-		skillNode[index].skill = skill[index];
-		skillNode[index].right = &skillNode[index * 2 + 2];
-	}
-	skillNode[3].left = &skillNode[7];
-	skillNode[3].skill = skill[3];
-	skillNode[3].right = NULL;
-	for (int index = 4; index < 8; index++) {
-		skillNode[index].left = NULL;
-		skillNode[index].skill = skill[index];
-		skillNode[index].right = NULL;
-	}
+Skill** SkillInit() {/*
+	Skill* skill[8] = {{FALSE, "도구함", "여러 장비를 보관할 수 있다!", "스킬 트리를 개방할 수 있다.", 5000},
+					{FALSE, "달구지", "밭을 더 쉽게 갈 수 있다!", "밭의 개수가 1개 추가된다.", 10000},
+					{FALSE, "할인쿠폰", "물건을 싸게 구매할 수 있다.", "PC창에서 구매하는 모든 상품(스킬 제외)이 5% 할인된다.", 15000},
+					{FALSE, "외양간", "동물을 더 많이 관리할 수 있다!", "동물 농장의 크기가 1 증가한다.", 10000},
+					{FALSE, "경운기", "밭을 어마어마하게 쉽게 갈 수 있다!", "밭의 개수가 1개 추가된다.", 25000},
+					{FALSE, "마네키네코", "수익이 늘어날 것 같은 기분이 든다!", "모든 메뉴의 가격이 500원 증가한다.", 30000},
+					{FALSE, "---", "---", "---", 0},
+					{FALSE, "외양간 확장", "동물을 더 많이 관리할 수 있다.", "동물 농장의 크기가 1 증가한다.", 25000} };
 
-	SkillTree skill8 = { NULL, skill[7], NULL }; //외양간 확장
-	SkillTree skill7 = { NULL, skill[6], NULL }; //NULL
-	SkillTree skill6 = { NULL, skill[5], NULL }; //마네키네코
-	SkillTree skill5 = { NULL, skill[4], NULL }; //경운기
-	SkillTree skill4 = { &skill8, skill[3], NULL }; //외양간
-	SkillTree skill3 = { &skill6, skill[2], &skill7 }; //할인쿠폰
-	SkillTree skill2 = { &skill4, skill[1], &skill5 }; //달구지
-	SkillTree skill1 = { &skill2, skill[0], &skill3 }; //도구함
-
-	skillTree = &skillNode[0];
+	return skill;*/
 }
 

@@ -1013,24 +1013,11 @@ void PcSkill()
     int y = 4;
 
     // 칸 1
-    gotoXY(x, y + 1); printf("%s - %d원", skillTree->skill.name, skillTree->skill.money);
-    gotoXY(x, y + 3); printf("▶ %s", skillTree->skill.descript);
-    gotoXY(x, y + 4); printf("\033[1;34m%s\033[0m", skillTree->skill.effect);
-
-    // 칸 2
-    gotoXY(x, y + 6); printf("달구지 - 10,000원");
-    gotoXY(x, y + 8); printf("▶ 소를 데려와 밭을 쉽게 갈 수 있다!");
-    gotoXY(x, y + 9); printf("\033[1;34m밭+1 사육장+1 소+1\033[0m");
-
-    // 칸 3
-    gotoXY(x, y + 11); printf("경운기 - 25,000원");
-    gotoXY(x, y + 13); printf("▶ 밭을 어마어마하게 쉽게 갈 수 있다!");
-    gotoXY(x, y + 14); printf("\033[1;34m밭+1\033[0m");
-
-    // 칸 4
-    gotoXY(x, y + 16); printf("외양간 - 10,000원");
-    gotoXY(x, y + 18); printf("▶ 동물을 더 많이 관리할 수 있다!");
-    gotoXY(x, y + 19); printf("\033[1;34m사육장+1\033[0m");
+    for (int index = 0, height = 0; index < 4; index++, height += 5) {
+        gotoXY(x, y + 1 + height); printf("%s - %d원", skill[index].name, skill[index].isBought);
+        gotoXY(x, y + 3 + height); printf("▶ %s", skill[index].descript);
+        gotoXY(x, y + 4 + height); printf("\033[1;34m%s\033[0m", skill[index].effect);
+    }
 
     gotoXY(x + 60, y + 20); printf(" \033[1;34m┏━━━━━━━━━┓");
     gotoXY(x + 60, y + 21); printf("ㅤ 스킬트리");
