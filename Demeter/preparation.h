@@ -33,10 +33,18 @@ bool GoStore() {
 			}
 			break;
 		case LEFT:
-			screen = ((screen - 1) + 4) % 4;
+			screen = ((screen - 1) + 5) % 5;
+			if ((screen == 1 || screen == 2) && y == 3) {
+				color[y] = NONE;
+				y--;
+			}
 			break;
 		case RIGHT:
-			screen = ((screen + 1) + 4) % 4;
+			screen = ((screen + 1) + 5) % 5;
+			if ((screen == 1 || screen == 2) && y == 3) {
+				color[y] = NONE;
+				y--;
+			}
 			break;
 		case DOWN:
 			if (screen == 1 || screen == 2) {
@@ -53,28 +61,95 @@ bool GoStore() {
 			}
 			break;
 		case ENTER:
-			system("cls");
-			PcPur(screen, y);
-			gotoXY(23, 15);
-			CursorView(TRUE);
-			scanf("%d", &input);
-			CursorView(FALSE);
-			if (input >= 5) {
-				cost = (int)pc[screen].money[y] * input * 0.95;
+			//재료 구매창일 때
+			if (screen < 3) {
+				system("cls");
+				PcPur(screen, y);
+				gotoXY(23, 15);
+				CursorView(TRUE);
+				scanf("%d", &input);
+				CursorView(FALSE);
+				//input 개수가 5이상이면 할인
+				if (input >= 5) {
+					cost = (int)pc[screen].money[y] * input * 0.95;
+				}
+				else {
+					cost = pc[screen].money[y] * input;
+				}
+
+				//보유한 돈이 더 많으면 구매
+				if (status.money >= cost) {
+					status.money -= cost;
+					*status.ingredient[screen][y] += input;
+				}
+			}
+			//스킬 창일 때
+			else if (screen == 3) {
+				if (y == 0 && skill[y].isBought == FALSE) {
+					if (status.money >= skill[y].money) {
+						skill[y].isBought = TRUE;
+						status.money -= skill[y].money;
+					}
+					else {
+						color[y] = RED;
+						system("cls");
+						PcOrder(screen, color);
+						Status();
+						Sleep(1000);
+						color[y] = GREEN;
+					}
+				}
+				else if (skill[(y - (y % 2 == 0 ? 2 : 1)) / 2].isBought == TRUE) {
+					if (skill[y].isBought == FALSE && status.money >= skill[y].money) {
+							skill[y].isBought = TRUE;
+							status.money -= skill[y].money;
+					}
+					else {
+						color[y] = RED;
+						system("cls");
+						PcOrder(screen, color);
+						Status();
+						Sleep(1000);
+						color[y] = GREEN;
+					}
+				}
+				else {
+					color[y] = RED;
+					system("cls");
+					PcOrder(screen, color);
+					Status();
+					Sleep(1000);
+					color[y] = GREEN;
+				}
 			}
 			else {
-				cost = pc[screen].money[y] * input;
-			}
-
-			if (status.money >= cost) {
-				status.money -= cost;
-				*status.ingredient[screen][y] += input;
-				//스탯 변화 출력
+				int y2 = y + 4;
+				if(skill[(y2 - (y2 % 2 == 0 ? 2 : 1)) / 2].isBought == TRUE) {
+					if (skill[y2].isBought == FALSE && status.money >= skill[y2].money) {
+						skill[y2].isBought = TRUE;
+						status.money -= skill[y2].money;
+					}
+					else {
+						color[y] = RED;
+						system("cls");
+						PcOrder(screen, color);
+						Status();
+						Sleep(1000);
+						color[y] = GREEN;
+					}
+				}
+				else {
+					color[y] = RED;
+					system("cls");
+					PcOrder(screen, color);
+					Status();
+					Sleep(1000);
+					color[y] = GREEN;
+				}
 			}
 			break;
 		case ESC:
-			color[y] = NONE; //
-			//system("cls");
+			color[y] = NONE;
 			while (roop) {
 				system("cls");
 				gotoXY(65, index);
@@ -106,6 +181,24 @@ bool GoStore() {
 	}
 }
 
+void SetCost(bool coupon) {
+	if (coupon == TRUE) {
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 4; j++) {
+				pc[i].money[j] *= 0.95;
+			}
+		}
+	}
+}
+
+void SetMenu(bool manekineko) {
+	if (manekineko == TRUE) {
+		for (int index = 0; index < 8; index++) {
+			menu.cost[index] -= 500;
+		}
+	}
+}
+
 //장사 시작 전(농장, PC)
 void BeforeSales() {
 	int x = 0;
@@ -113,6 +206,8 @@ void BeforeSales() {
 	int mapKey = 0;
 	bool roop = TRUE;
 
+	SetCost(skill[2].isBought);
+	SetMenu(skill[5].isBought);
 	system("cls");
 	MapFarm();
 	PlayerFront(x, y);
@@ -181,7 +276,15 @@ void BeforeSales() {
 			break;
 		case ENTER:
 			if (mapKey == FARM) {
-				//if
+				if ((x == 5 || x == 18) && y == 17) {
+					Plant();
+				}
+				else if (x == 31 && y == 17 && skill[1].isBought == TRUE) {
+					Plant();
+				}
+				else if (x == 44 && y == 17 && skill[4].isBought == TRUE) {
+					Plant();
+				}
 			}
 			break;
 		}

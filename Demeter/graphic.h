@@ -362,7 +362,7 @@ void MapFarm()
     gotoXY(x + 26, y + 6); printf("  \033[0;33m/ㅤㅤㅤㅤㅤㅤ/\033[0m");
     gotoXY(x + 26, y + 7); printf(" \033[0;33m/ㅤㅤㅤㅤㅤㅤ/\033[0m");
     gotoXY(x + 26, y + 8); printf("\033[0;33m/ㅤㅤㅤㅤㅤㅤ/\033[0m");
-    gotoXY(x + 26, y + 9); printf("\033[0;33m-----\033[0;32m---\033[0;33m-----\033[0m");
+    gotoXY(x + 26, y + 9); printf("\033[0;33m-----%s---\033[0;33m-----\033[0m", (skill[1].isBought == TRUE) ? GREEN : RED);
     //밭 4
     gotoXY(x + 47, y); printf("\033[0;33m-------------\033[0m");
     gotoXY(x + 39, y + 1); printf("       \033[0;33m/ㅤㅤㅤㅤㅤㅤ/\033[0m");
@@ -373,7 +373,7 @@ void MapFarm()
     gotoXY(x + 39, y + 6); printf("  \033[0;33m/ㅤㅤㅤㅤㅤㅤ/\033[0m");
     gotoXY(x + 39, y + 7); printf(" \033[0;33m/ㅤㅤㅤㅤㅤㅤ/\033[0m");
     gotoXY(x + 39, y + 8); printf("\033[0;33m/ㅤㅤㅤㅤㅤㅤ/\033[0m");
-    gotoXY(x + 39, y + 9); printf("\033[0;33m-----\033[0;32m---\033[0;33m-----\033[0m");
+    gotoXY(x + 39, y + 9); printf("\033[0;33m-----%s---\033[0;33m-----\033[0m", (skill[4].isBought == TRUE) ? GREEN : RED);
 
     FarmPortal(); // 농장 포탈 호출
 }
@@ -891,17 +891,17 @@ void Arr()
 
     gotoXY(x, y + 3); printf(" ┏━━━━━━━━━━┓");
     gotoXY(x, y + 4); printf("ㅤㅤㅤ 소");
-    gotoXY(x, y + 5); printf("ㅤ  보유: n");
+    gotoXY(x, y + 5); printf("ㅤ  보유: %2d", status.cow);
     gotoXY(x, y + 6); printf(" ┗━━━━━━━━━━┛");
 
     gotoXY(x + 20, y + 3); printf(" ┏━━━━━━━━━━┓");
     gotoXY(x + 20, y + 4); printf("ㅤㅤㅤ돼지");
-    gotoXY(x + 20, y + 5); printf("ㅤ  보유: n");
+    gotoXY(x + 20, y + 5); printf("ㅤ  보유: %2d", status.pig);
     gotoXY(x + 20, y + 6); printf(" ┗━━━━━━━━━━┛");
 
     gotoXY(x + 40, y + 3); printf(" ┏━━━━━━━━━━┓");
     gotoXY(x + 40, y + 4); printf("ㅤㅤㅤ 닭");
-    gotoXY(x + 40, y + 5); printf("ㅤ  보유: n");
+    gotoXY(x + 40, y + 5); printf("ㅤ  보유: %2d", status.chicken);
     gotoXY(x + 40, y + 6); printf(" ┗━━━━━━━━━━┛");
 }
 
@@ -1007,16 +1007,45 @@ void PcPur(int screen, int index)
 }
 
 // 스킬 메뉴
-void PcSkill()
+void PcSkill1()
 {
     int x = 6;
     int y = 4;
 
-    // 칸 1
     for (int index = 0, height = 0; index < 4; index++, height += 5) {
-        gotoXY(x, y + 1 + height); printf("%s - %d원", skill[index].name, skill[index].isBought);
-        gotoXY(x, y + 3 + height); printf("▶ %s", skill[index].descript);
-        gotoXY(x, y + 4 + height); printf("\033[1;34m%s\033[0m", skill[index].effect);
+        if (index > 0 && skill[(index - (index % 2 == 0 ? 2 : 1)) / 2].isBought == TRUE || index == 0) {
+            gotoXY(x, y + 1 + height); printf("%s - %d원", skill[index].name, skill[index].money);
+            gotoXY(x, y + 3 + height); printf("▶ %s", skill[index].descript);
+            gotoXY(x, y + 4 + height); printf("\033[1;34m%s\033[0m", skill[index].effect);
+        }
+        else {
+            gotoXY(x, y + 1 + height); printf("???");
+            gotoXY(x, y + 3 + height); printf("???");
+            gotoXY(x, y + 4 + height); printf("\033[1;34m%s 필요\033[0m", skill[(index - (index % 2 == 0 ? 2 : 1)) / 2].name);
+        }
+    }
+
+    gotoXY(x + 60, y + 20); printf(" \033[1;34m┏━━━━━━━━━┓");
+    gotoXY(x + 60, y + 21); printf("ㅤ 스킬트리");
+    gotoXY(x + 60, y + 22); printf(" ┗━━━━━━━━━┛\033[0m");
+}
+
+void PcSkill2()
+{
+    int x = 6;
+    int y = 4;
+
+    for (int index = 4, height = 0; index < 8; index++, height += 5) {
+        if (skill[(index - (index % 2 == 0 ? 2 : 1)) / 2].isBought == TRUE) {
+            gotoXY(x, y + 1 + height); printf("%s - %d원", skill[index].name, skill[index].money);
+            gotoXY(x, y + 3 + height); printf("▶ %s", skill[index].descript);
+            gotoXY(x, y + 4 + height); printf("\033[1;34m%s\033[0m", skill[index].effect);
+        }
+        else {
+            gotoXY(x, y + 1 + height); printf("???");
+            gotoXY(x, y + 3 + height); printf("???");
+            gotoXY(x, y + 4 + height); printf("\033[1;34m%s 필요\033[0m", skill[(index - (index % 2 == 0 ? 2 : 1)) / 2].name);
+        }
     }
 
     gotoXY(x + 60, y + 20); printf(" \033[1;34m┏━━━━━━━━━┓");
@@ -1137,7 +1166,10 @@ void PcOrder(int screen, char** color)
         PcMenu3();
         break;
     case 3:
-        PcSkill();
+        PcSkill1();
+        break;
+    case 4:
+        PcSkill2();
         break;
     }
 }
