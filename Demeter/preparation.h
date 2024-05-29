@@ -10,6 +10,8 @@
 #include "init.h"
 #include "graphic.h"
 
+int field[4] = { 0, 0, 0, 0 };
+
 bool GoStore() {
 	int y = 0;
 	int screen = 0; //PC »≠∏È ¿Œµ¶Ω∫
@@ -181,20 +183,60 @@ bool GoStore() {
 	}
 }
 
-void SetCost(bool coupon) {
+void SetPcCost(bool coupon) {
 	if (coupon == TRUE) {
-		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 4; j++) {
-				pc[i].money[j] *= 0.95;
-			}
-		}
+		pc[0].money[0] = 1900;
+		pc[0].money[1] = 3800;
+		pc[0].money[2] = 2850;
+		pc[0].money[3] = 1900;
+
+		pc[1].money[0] = 1425;
+		pc[1].money[1] = 2850;
+		pc[1].money[2] = 3800;
+
+		pc[2].money[0] = 7600;
+		pc[2].money[1] = 8550;
+		pc[2].money[2] = 8075;
 	}
 }
 
-void SetMenu(bool manekineko) {
+void SetMenuCost(bool manekineko) {
 	if (manekineko == TRUE) {
-		for (int index = 0; index < 8; index++) {
-			menu.cost[index] -= 500;
+		menu.cost[0] = 3000;
+		menu.cost[1] = 4000;
+		menu.cost[2] = 5500;
+		menu.cost[3] = 9500;
+		menu.cost[4] = 12500;
+		menu.cost[5] = 13500;
+		menu.cost[6] = 13500;
+		menu.cost[7] = 20500;
+	}
+}
+
+int PlantIngredient(int x, int y) {
+	int index = 0;
+
+	while (TRUE) {
+		system("cls");
+		MapFarm();
+		Status();
+		PlayerBack(x, y);
+		Plant();
+		gotoXY(1 + index * 20, 27);
+		printf("¢π");
+		switch (_getch()) {
+		case LEFT:
+			if (index > 0) {
+				index--;
+			}
+			break;
+		case RIGHT:
+			if (index < 3) {
+				index++;
+			}
+			break;
+		case ENTER:
+			return index;
 		}
 	}
 }
@@ -206,12 +248,12 @@ void BeforeSales() {
 	int mapKey = 0;
 	bool roop = TRUE;
 
-	SetCost(skill[2].isBought);
-	SetMenu(skill[5].isBought);
 	system("cls");
 	MapFarm();
 	PlayerFront(x, y);
 
+	SetPcCost(skill[2].isBought);
+	SetMenuCost(skill[5].isBought);
 	while (roop) {
 		if (26 <= x && x <= 44 && 24 <= y) {
 			roop = GoStore();
@@ -227,6 +269,7 @@ void BeforeSales() {
 		switch (mapKey) {
 		case FARM:
 			MapFarm();
+			FarmPortal();
 			break;
 		case ANIMAL:
 			MapAnimal();
@@ -277,13 +320,26 @@ void BeforeSales() {
 		case ENTER:
 			if (mapKey == FARM) {
 				if ((x == 5 || x == 18) && y == 17) {
-					Plant();
+					switch (PlantIngredient(x, y)) {
+					case 0:
+						if (status.cabbage > 0) {
+							status.cabbage--;
+							Sprout(0);
+						}
+					}
 				}
 				else if (x == 31 && y == 17 && skill[1].isBought == TRUE) {
-					Plant();
+					switch (PlantIngredient(x, y)) {
+
+					}
 				}
 				else if (x == 44 && y == 17 && skill[4].isBought == TRUE) {
+					system("cls");
+					MapFarm();
+					Status();
+					PlayerBack(x, y);
 					Plant();
+					_getch();
 				}
 			}
 			break;

@@ -374,8 +374,6 @@ void MapFarm()
     gotoXY(x + 39, y + 7); printf(" \033[0;33m/ㅤㅤㅤㅤㅤㅤ/\033[0m");
     gotoXY(x + 39, y + 8); printf("\033[0;33m/ㅤㅤㅤㅤㅤㅤ/\033[0m");
     gotoXY(x + 39, y + 9); printf("\033[0;33m-----%s---\033[0;33m-----\033[0m", (skill[4].isBought == TRUE) ? GREEN : RED);
-
-    FarmPortal(); // 농장 포탈 호출
 }
 
 // 작물 선택
@@ -423,35 +421,41 @@ void Poo()
 }
 
 // 새싹 - 모든 작물 공통
-void Sprout()
+void Sprout(int index)
 {
     int x = 1;
     int y = 7;
 
-    // 밭 1
-    gotoXY(x+10, y + 1); printf("\033[0;32mV  ㅤ V\033[0m");
-    gotoXY(x+8, y + 3); printf("\033[0;32mV   ㅤV\033[0m");
-    gotoXY(x+6, y + 5); printf("\033[0;32mV   ㅤV\033[0m");
-    gotoXY(x+4, y + 7); printf("\033[0;32mV   ㅤV\033[0m");
-
-    // 밭 2
-    gotoXY(x + 23, y + 1); printf("\033[0;32mV  ㅤ V\033[0m");
-    gotoXY(x + 21, y + 3); printf("\033[0;32mV  ㅤ V\033[0m");
-    gotoXY(x + 19, y + 5); printf("\033[0;32mV  ㅤ V\033[0m");
-    gotoXY(x + 17, y + 7); printf("\033[0;32mV  ㅤ V\033[0m");
-
-    // 밭 3
-    gotoXY(x + 36, y + 1); printf("\033[0;32mV  ㅤ V\033[0m");
-    gotoXY(x + 34, y + 3); printf("\033[0;32mV  ㅤ V\033[0m");
-    gotoXY(x + 32, y + 5); printf("\033[0;32mV  ㅤ V\033[0m");
-    gotoXY(x + 30, y + 7); printf("\033[0;32mV  ㅤ V\033[0m");
-
-    //밭 4
-    gotoXY(x + 49, y + 1); printf("\033[0;32mV  ㅤ V\033[0m");
-    gotoXY(x + 47, y + 3); printf("\033[0;32mV  ㅤ V\033[0m");
-    gotoXY(x + 45, y + 5); printf("\033[0;32mV  ㅤ V\033[0m");
-    gotoXY(x + 43, y + 7); printf("\033[0;32mV  ㅤ V\033[0m");
-
+    switch(index) {
+    case 0:
+        // 밭 1
+        gotoXY(x + 10, y + 1); printf("\033[0;32mV  ㅤ V\033[0m");
+        gotoXY(x + 8, y + 3); printf("\033[0;32mV   ㅤV\033[0m");
+        gotoXY(x + 6, y + 5); printf("\033[0;32mV   ㅤV\033[0m");
+        gotoXY(x + 4, y + 7); printf("\033[0;32mV   ㅤV\033[0m");
+        break;
+    case 1:
+        // 밭 2
+        gotoXY(x + 23, y + 1); printf("\033[0;32mV  ㅤ V\033[0m");
+        gotoXY(x + 21, y + 3); printf("\033[0;32mV  ㅤ V\033[0m");
+        gotoXY(x + 19, y + 5); printf("\033[0;32mV  ㅤ V\033[0m");
+        gotoXY(x + 17, y + 7); printf("\033[0;32mV  ㅤ V\033[0m");
+        break;
+    case 2:
+        // 밭 3
+        gotoXY(x + 36, y + 1); printf("\033[0;32mV  ㅤ V\033[0m");
+        gotoXY(x + 34, y + 3); printf("\033[0;32mV  ㅤ V\033[0m");
+        gotoXY(x + 32, y + 5); printf("\033[0;32mV  ㅤ V\033[0m");
+        gotoXY(x + 30, y + 7); printf("\033[0;32mV  ㅤ V\033[0m");
+        break;
+    case 3:
+        //밭 4
+        gotoXY(x + 49, y + 1); printf("\033[0;32mV  ㅤ V\033[0m");
+        gotoXY(x + 47, y + 3); printf("\033[0;32mV  ㅤ V\033[0m");
+        gotoXY(x + 45, y + 5); printf("\033[0;32mV  ㅤ V\033[0m");
+        gotoXY(x + 43, y + 7); printf("\033[0;32mV  ㅤ V\033[0m");
+        break;
+    }
 }
 
 void Lettuce()
