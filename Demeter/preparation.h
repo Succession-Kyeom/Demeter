@@ -488,7 +488,7 @@ void Feed(int animal, int x, int y) {
 	}
 }
 
-void GetIngredient(char* isBreed, int animal) {
+void GetIngredient(char** isBreed, int animal) {
 	if (animal == COW) {
 		status.milk += 2;
 	}
@@ -788,7 +788,7 @@ void BeforeSales() {
 						Feed(fence[0], x, y);
 					}
 					else if (isBreed[0] == BLUE) {
-						GetIngredient(isBreed[0], fence[0]);
+						GetIngredient(&isBreed[0], fence[0]);
 					}
 				}
 				else if (x == 30 && y == 17) {
@@ -824,7 +824,7 @@ void BeforeSales() {
 						Feed(fence[1], x, y);
 					}
 					else if (isBreed[1] == BLUE) {
-						GetIngredient(isBreed[1], fence[1]);
+						GetIngredient(&isBreed[1], fence[1]);
 					}
 				}
 				else if (x == 50 && y == 17) {
@@ -860,7 +860,7 @@ void BeforeSales() {
 						Feed(fence[2], x, y);
 					}
 					else if (isBreed[2] == BLUE) {
-						GetIngredient(isBreed[2], fence[2]);
+						GetIngredient(&isBreed[2], fence[2]);
 					}
 				}
 				system("cls");

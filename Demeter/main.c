@@ -315,7 +315,7 @@ void FarmGrow() {
 
 void AnimalReset() {
 	for (int index = 0; index < 3; index++) {
-		if (last[index] == 0) {
+		if (last[index] == 0 && isBreed[index] != RED) {
 			isBreed[index] = GREEN;
 			fence[index] = 0;
 		}
