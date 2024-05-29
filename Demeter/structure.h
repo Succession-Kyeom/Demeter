@@ -71,12 +71,21 @@ Skill skill[8] = {
 //--
 
 //세이브 데이터--
-typedef struct data {
-	struct data* nextDay;
-	struct status stat;
-}Data;
+//세이브 노드
+typedef struct GameData {
+	struct status status;
+	struct Skill skill[8];
+	int field[4];
+	char* isPlant[4];
+	int fence[3];
+	char* isBreed[3];
+	int last[3];
+} GameData;
 
-typedef struct Save {
-	struct data* latest;
-}Save;
-//--
+//덱
+typedef struct GameDataDeque{
+	struct GameData data[MAX_DEQUE_SIZE];
+	int front;
+	int rear;
+	int size;
+} GameDataDeque;

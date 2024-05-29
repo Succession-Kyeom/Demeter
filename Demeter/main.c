@@ -11,6 +11,9 @@
 #include "graphic.h"
 #include "description.h"
 #include "preparation.h"
+#include "save.h"
+
+GameData data;
 
 //주문 받기
 Order getOrder(int customer) {
@@ -293,17 +296,63 @@ bool PayTax() {
 	}
 }
 
-void GameStart() {
+void FarmGrow() {
+	for (int index = 0; index < 4; index++) {
+		if (field[index] == CABBAGE_SEED || field[index] == TOMATO_SEED || field[index] == WHEAT_SEED || field[index] == CORN_SEED) {
+			field[index] *= 2;
+		}
+		if (isPlant[index] == YELLOW) {
+			isPlant[index] = BLUE;
+		}
+	}
+	for (int index = 0; index < 3; index++) {
+		if (isBreed[index] == NONE || isBreed[index] == BLUE) {
+			isBreed[index] = BLUE;
+			last[index]--;
+		}
+	}
+}
+
+void AnimalReset() {
+	for (int index = 0; index < 3; index++) {
+		if (last[index] == 0) {
+			isBreed[index] = GREEN;
+			fence[index] = 0;
+		}
+	}
+}
+
+void InputGameData() {
+	data.status = status;
+	for (int index = 0; index < 8; index++) {
+		data.skill[index] = skill[index];
+	}
+	for (int index = 0; index < 4; index++) {
+		data.field[index] = field[index];
+		data.isPlant[index] = isPlant[index];
+	}
+	for (int index = 0; index < 3; index++) {
+		data.fence[index] = fence[index];
+		data.isBreed[index] = isBreed[index];
+	}
+}
+
+void GameStart(GameDataDeque* datas) {
 	bool roop = TRUE;
 
 	while (roop) {
 		BeforeSales();
 		StartSales();
 		AfterSales();
+		status.day++;
+		FarmGrow();
+		AnimalReset();
+		InputGameData();
+		SaveData(datas, data);
 		if (account.dDay == 0) {
 			roop = PayTax();
 		}
-		status.day++;
+
 	}
 	system("cls");
 	do {
@@ -311,10 +360,31 @@ void GameStart() {
 	} while (!_getch());
 }
 
-void LoadData() {
-	system("cls");
-	while (!_kbhit()) {
-		Load();
+void LoadDatas(GameDataDeque* datas) {
+	int y = 0;
+
+	while (TRUE) {
+		system("cls");
+		Load(datas);
+		gotoXY(6, 8 + y * 3);
+		printf("▶");
+		switch (_getch()) {
+		case UP:
+			if (y > 0) {
+				y--;
+			}
+			break;
+		case DOWN:
+			if (y < 4) {
+				y++;
+			}
+			break;
+		case ENTER:
+			data = LoadData(datas, y);
+			break;
+		case ESC:
+			return;
+		}
 		}
 }
 
@@ -361,8 +431,10 @@ int main() {
 	int y = 0;
 	int roop = TRUE;
 	int input = 0;
+	GameDataDeque* datas = (GameDataDeque*)malloc(sizeof(GameDataDeque));
 
 	//초기값 설정
+	InitDeque(datas);
 	StatusInit();
 	PcInit();
 	MenuInit();
@@ -373,13 +445,13 @@ int main() {
 	while (roop) {
 		switch (MainMenu()) {
 		case 1:
-			GameStart();
+			GameStart(datas);
 			break;
 		case 2:
 			HowToPlay();
 			break;
 		case 3:
-			LoadData();
+			LoadDatas(datas);
 			break;
 		}
 	}

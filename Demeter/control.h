@@ -24,6 +24,31 @@
 #define NONE "\033[0m"
 #define RED "\033[0;31m"
 #define GREEN "\033[0;32m"
+#define YELLOW "\033[0;33m"
+#define BLUE "\033[0;34m"
+
+//식물 코드 지정
+#define GROUND 0
+
+#define CABBAGE_SEED 2
+#define CABBAGE 4
+
+#define TOMATO_SEED 3
+#define TOMATO 6
+
+#define WHEAT_SEED 5
+#define WHEAT 10
+
+#define CORN_SEED 7
+#define CORN 14
+
+//동물 코드 지정
+#define COW 1
+#define PIG 2
+#define CHICKEN 3
+
+#define MAX_DEQUE_SIZE 5
+#define MAX_FILENAME_SIZE 50
 
 //커서 좌표 이동
 void gotoXY(int x, int y) {

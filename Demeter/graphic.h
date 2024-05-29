@@ -147,11 +147,22 @@ void ManualFarm()
     gotoXY(x + 64, y + 25); printf(" ┗━━━ ▽━━━┛");
 
     // 설명
-    gotoXY(x, y + 4); printf("여기다 설명을 적으면 되겠지");
-    gotoXY(x, y + 5); printf("처음하는 거라 이게 맞는 지 궁금하네요");
-    gotoXY(x, y + 7); printf("동물 키우고 ");
-    gotoXY(x, y + 8); printf("식물 키워서");
-    gotoXY(x, y + 9); printf("가게를 운영해보세용~ㅎ.ㅎ");
+    gotoXY(x, y + 4); printf("채소 농장");
+    gotoXY(x, y + 5); printf("-밭에는 양상추,토마토,밀,옥수수를 심고 수확할 수 있습니다.");
+    gotoXY(x, y + 6); printf("-채소가 심어진 밭에서  거름을 사용하면 곧바로 수확이 가능합니다,");
+    gotoXY(x, y + 7); printf("-단, 당일 거름을 사용한 밭에는 다시 거름을 사용할 수 없습니다.");
+    gotoXY(x, y + 8); printf("-작물이 다 자라면 해당 밭의 앞에서 ENTER를 누르면 수확할 수 있습니다.");
+    gotoXY(x, y + 9); printf("-작물이 수확되는 개수는 매번 달라질 수 있습니다.");
+    gotoXY(x, y + 10); printf("-작물은 다음 날이 되면 완전히 자라납니다.");
+
+    gotoXY(x, y + 12); printf("동물 농장");
+    gotoXY(x, y + 13); printf("-동물 농장에는 소 , 닭, 돼지를 키울 수 있습니다.");
+    gotoXY(x, y + 14); printf("-소,닭,돼지에게서는 각각 우유,달걀,돼지고기를 얻을 수 있습니다.");
+    gotoXY(x, y + 15); printf("-밀을 주면 곧바로 수확물을 얻을 수 있으며 거름을 획득할 수 있습니다.");
+    gotoXY(x, y + 16); printf("-단, 거름은 최대 5개까지만 보유할 수 있으며 그 이상은 얻을 수 없습니다.");
+    gotoXY(x, y + 17); printf("-얻은 거름은 이틀이 지나면 사라집니다.");
+    gotoXY(x, y + 18); printf("-또한 당일 밀을 준 동물에게는 다시 밀을 줄 수 없습니다.");
+    gotoXY(x, y + 19); printf("-다음날이 되면 수확물이 바구니에 들어갑니다.");
 }
 // 가게운영 상세 설명
 void ManualStore()
@@ -170,11 +181,11 @@ void ManualStore()
     gotoXY(x + 64, y + 25); printf(" ┗━━━ ▽━━━┛");
 
     // 설명
-    gotoXY(x, y + 4); printf("여기다 설명을 적으면 되겠지");
-    gotoXY(x, y + 5); printf("처음하는 거라 이게 맞는 지 궁금하네요");
-    gotoXY(x, y + 7); printf("음식을 만들어서 판매하고 ");
-    gotoXY(x, y + 8); printf("PC를 통해 재고를 관리하세요~");
-    gotoXY(x, y + 9); printf("멋지게 가게를 운영해보세용~ㅎ.ㅎ");
+    gotoXY(x, y + 4); printf("-장사 시작 전에는 PC창을 통해 물건을 발주할 수 있습니다. PC창의 자세한 설명은 \"돈\" 을 참고해주세요");
+    gotoXY(x, y + 5); printf("-영수증의 주문 번호 순서대로 제작할 경우 추가 금액을 얻을 수 있습니다!");
+    gotoXY(x, y + 7); printf("-제작에는 레시피에 맞는 재료들이 필요합니다!");
+    gotoXY(x, y + 8); printf("-재료가 없어 제작에 실패하면 보유 금액이 차감됩니다!");
+    gotoXY(x, y + 9); printf("-장사가 종료되면 오늘의 장사 내용을 확인할 수 있습니다.");
 }
 // 돈 상세 설명
 void ManualMoney()
@@ -193,11 +204,9 @@ void ManualMoney()
     gotoXY(x + 64, y + 25); printf(" ┗━━━ ▽━━━┛");
 
     // 설명
-    gotoXY(x, y + 4); printf("여기다 설명을 적으면 되겠지");
-    gotoXY(x, y + 5); printf("처음하는 거라 이게 맞는 지 궁금하네요");
-    gotoXY(x, y + 7); printf("음식을 만들어서 판매하여 돈을 벌고");
-    gotoXY(x, y + 8); printf("꼬박꼬박 가게세도 상납하세요!");
-    gotoXY(x, y + 9); printf("멋지게 가게를 운영해보세용~ㅎ.ㅎ");
+    gotoXY(x, y + 4); printf("-가게 운영을 통해 얻을 수 있는 화폐입니다.");
+    gotoXY(x, y + 5); printf("-장사 시작 전에 사용할 수 있는 PC창에서 재료나 물품을 구매할 수 있습니다.");
+    gotoXY(x, y + 7); printf("-물품을 구매하면 농장이나 가게에 변화가 나타납니다.");
 }
 // 이벤트 상세 설명
 void ManualEvent()
@@ -216,15 +225,14 @@ void ManualEvent()
     gotoXY(x + 64, y + 25); printf(" ┗━━━ ▽━━━┛");
 
     // 설명
-    gotoXY(x, y + 4); printf("여기다 설명을 적으면 되겠지");
-    gotoXY(x, y + 5); printf("처음하는 거라 이게 맞는 지 궁금하네요");
-    gotoXY(x, y + 7); printf("농장과 가게를 운영하며");
-    gotoXY(x, y + 8); printf("다양한 사건을 맞이합니다~");
-    gotoXY(x, y + 9); printf("멋지게 가게를 운영해보세용~ㅎ.ㅎ");
+    gotoXY(x, y + 4); printf("-5일마다 당신은 가게세를 지불해야 합니다!");
+    gotoXY(x, y + 5); printf("-가게세를 지불 후 당신의 보유 금액이 0 이하일 경우 당신은 농장과 가게를 잃습니다.");
+    gotoXY(x, y + 7); printf("-이 농장의 동물들은 왜인지 오래 살지 못합니다. 가게세를 지불 후엔 동물들이 없어집니다.");
+    gotoXY(x, y + 8); printf("-운영이 끝나면 자동으로 진행상황이 저장됩니다.");
 }
 
 // 불러오기
-void Load()
+void Load(GameDataDeque* datas)
 {
     int x = 2;
     int y = 2;
@@ -242,18 +250,18 @@ void Load()
     gotoXY(x, y + 4); printf("    _________________________   _________________________");
     gotoXY(x, y + 5); printf(".-/|                         \\ /                         |\\-.");
     gotoXY(x, y + 6); printf("||||                          |                          ||||");
-    gotoXY(x, y + 7); printf("||||                          |            --==*==--     ||||");
+    gotoXY(x, y + 7); printf("||||                          |                          ||||");
     gotoXY(x, y + 8); printf("||||                          |                          ||||");
     gotoXY(x, y + 9); printf("||||                          |                          ||||");
     gotoXY(x, y + 10); printf("||||                          |                          ||||");
-    gotoXY(x, y + 11); printf("||||    --==*==--             |                          ||||");
+    gotoXY(x, y + 11); printf("||||                          |                          ||||");
     gotoXY(x, y + 12); printf("||||                          |                          ||||");
     gotoXY(x, y + 13); printf("||||                          |                          ||||");
-    gotoXY(x, y + 14); printf("||||                          |            --==*==--     ||||");
+    gotoXY(x, y + 14); printf("||||                          |                          ||||");
     gotoXY(x, y + 15); printf("||||                          |                          ||||");
     gotoXY(x, y + 16); printf("||||                          |                          ||||");
     gotoXY(x, y + 17); printf("||||                          |                          ||||");
-    gotoXY(x, y + 18); printf("||||                          |         --==*==--        ||||");
+    gotoXY(x, y + 18); printf("||||                          |                          ||||");
     gotoXY(x, y + 19); printf("||||                          |                          ||||");
     gotoXY(x, y + 20); printf("||||                          |                          ||||");
     gotoXY(x, y + 21); printf("||||                          |                          ||||");
@@ -263,10 +271,15 @@ void Load()
     gotoXY(x, y + 25); printf("`---------------------------~___~--------------------------''"); // 맨 끝줄
 
     // 세이브 정보
-    gotoXY(x, y + 6); printf("|||| ▶ DAY 00                |                          ");
-    gotoXY(x, y + 7); printf("|||| 보유 금액: 0원           |                          ");
+    int index = 0;
+    for (GameDataDeque* data = datas; data->data[index].status.day != 0; index++) {
+        gotoXY(x, y + 6 + index * 3); printf("||||    DAY %2d                |                          ", data->data[index].status.day);
+        gotoXY(x, y + 7 + index * 3); printf("|||| 보유 금액: %5d원       |                          ", data->data[index].status.money);
+        index++;
+    }
+    /*
     gotoXY(x, y + 8); printf("|||| *---------------------*  |  *---------------------* ");
-    gotoXY(x, y + 9); printf("|||| ▶ DAY 00                |                          ");
+    gotoXY(x, y + 9); printf("||||    DAY 00                |                          ");
     gotoXY(x, y + 10); printf("|||| 보유 금액: 0원           |                          ");
     gotoXY(x, y + 11); printf("|||| *---------------------*  |  *---------------------* ");
     gotoXY(x, y + 12); printf("||||                          |                          ");
@@ -280,6 +293,7 @@ void Load()
     gotoXY(x, y + 20); printf("|||| *---------------------*  |  *---------------------* ");
     gotoXY(x, y + 21); printf("||||                          |                          ");
     gotoXY(x, y + 22); printf("||||                          |                          ");
+    */
 }
 
 //상태창
@@ -322,7 +336,7 @@ void FarmPortal()
 }
 
 // 농장 맵: 밭 
-void MapFarm()
+void MapFarm(char** isPlant)
 {
     int x = 1;  
     int y = 7;
@@ -338,7 +352,7 @@ void MapFarm()
     gotoXY(x, y + 6); printf("  \033[0;33m/ㅤㅤㅤㅤㅤㅤ/\033[0m");
     gotoXY(x, y + 7); printf(" \033[0;33m/ㅤㅤㅤㅤㅤㅤ/\033[0m");
     gotoXY(x, y + 8); printf("\033[0;33m/ㅤㅤㅤㅤㅤㅤ/\033[0m");
-    gotoXY(x, y + 9); printf("\033[0;33m-----\033[0;32m---\033[0;33m-----\033[0m");
+    gotoXY(x, y + 9); printf("\033[0;33m-----%s---\033[0;33m-----\033[0m", isPlant[0]);
 
     // 밭 2
     gotoXY(x + 21, y); printf("\033[0;33m-------------\033[0m");
@@ -350,7 +364,7 @@ void MapFarm()
     gotoXY(x + 13, y + 6); printf("  \033[0;33m/ㅤㅤㅤㅤㅤㅤ/\033[0m");
     gotoXY(x + 13, y + 7); printf(" \033[0;33m/ㅤㅤㅤㅤㅤㅤ/\033[0m");
     gotoXY(x + 13, y + 8); printf("\033[0;33m/ㅤㅤㅤㅤㅤㅤ/\033[0m");
-    gotoXY(x + 13, y + 9); printf("\033[0;33m-----\033[0;32m---\033[0;33m-----\033[0m");
+    gotoXY(x + 13, y + 9); printf("\033[0;33m-----%s---\033[0;33m-----\033[0m", isPlant[1]);
 
     // 밭 3
     gotoXY(x + 34, y); printf("\033[0;33m-------------\033[0m");
@@ -409,7 +423,7 @@ void Poo()
     int y = 22;
 
     gotoXY(x - 2, y); printf("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-    gotoXY(x - 1, y + 1); printf("▷ 거름을 주겠습니까?");
+    gotoXY(x - 1, y + 1); printf("▷ 비료를 주겠습니까?");
 
     gotoXY(x + 20, y + 4); printf(" ┏━━━━━━━┓");
     gotoXY(x + 20, y + 5); printf("ㅤㅤ 예");
@@ -458,167 +472,192 @@ void Sprout(int index)
     }
 }
 
-void Lettuce()
+void Lettuce(int index)
 {
     int x = 6;
-    int y =6;
+    int y = 6;
 
-
-    // 밭 1
-    gotoXY(x + 3, y + 3); printf("\033[0;32m .~~~-._\033[0m");
-    gotoXY(x + 1, y + 4); printf("\033[0;32m //) ' } //\033[0m");
-    gotoXY(x, y + 5); printf("\033[0;32m (`\ , /  ~)\033[0m");
-    gotoXY(x, y + 6); printf("\033[0;32m `-.`\/  _.'\033[0m");
-    gotoXY(x, y + 7); printf("\033[0;32m    \\--/ \033[0m");
-
-    // 밭 2
-    gotoXY(x + 16, y + 3); printf("\033[0;32m .~~~-._\033[0m");
-    gotoXY(x + 14, y + 4); printf("\033[0;32m //) ' } //\033[0m");
-    gotoXY(x + 13, y + 5); printf("\033[0;32m (`\ , /  ~)\033[0m");
-    gotoXY(x + 13, y + 6); printf("\033[0;32m `-.`\/  _.'\033[0m");
-    gotoXY(x + 13, y + 7); printf("\033[0;32m    \\--/ \033[0m");
-
-
-    // 밭 3
-    gotoXY(x + 29, y + 3); printf("\033[0;32m .~~~-._\033[0m");
-    gotoXY(x + 27, y + 4); printf("\033[0;32m //) ' } //\033[0m");
-    gotoXY(x + 26, y + 5); printf("\033[0;32m (`\ , /  ~)\033[0m");
-    gotoXY(x + 26, y + 6); printf("\033[0;32m `-.`\/  _.'\033[0m");
-    gotoXY(x + 26, y + 7); printf("\033[0;32m    \\--/ \033[0m");
-
-    //밭 4
-    gotoXY(x + 42, y + 3); printf("\033[0;32m .~~~-._\033[0m");
-    gotoXY(x + 40, y + 4); printf("\033[0;32m //) ' } //\033[0m");
-    gotoXY(x + 39, y + 5); printf("\033[0;32m (`\ , /  ~)\033[0m");
-    gotoXY(x + 39, y + 6); printf("\033[0;32m `-.`\/  _.'\033[0m");
-    gotoXY(x + 39, y + 7); printf("\033[0;32m    \\--/ \033[0m");
-
+    switch (index) {
+    case 0:
+        // 밭 1
+        gotoXY(x + 3, y + 3); printf("\033[0;32m .~~~-._\033[0m");
+        gotoXY(x + 1, y + 4); printf("\033[0;32m //) ' } //\033[0m");
+        gotoXY(x, y + 5); printf("\033[0;32m (`\\ , /  ~)\033[0m");
+        gotoXY(x, y + 6); printf("\033[0;32m `-.`\\/  _.'\033[0m");
+        gotoXY(x, y + 7); printf("\033[0;32m    \\--/ \033[0m");
+        break;
+    case 1:
+        // 밭 2
+        gotoXY(x + 16, y + 3); printf("\033[0;32m .~~~-._\033[0m");
+        gotoXY(x + 14, y + 4); printf("\033[0;32m //) ' } //\033[0m");
+        gotoXY(x + 13, y + 5); printf("\033[0;32m (`\\ , /  ~)\033[0m");
+        gotoXY(x + 13, y + 6); printf("\033[0;32m `-.`\\/  _.'\033[0m");
+        gotoXY(x + 13, y + 7); printf("\033[0;32m    \\--/ \033[0m");
+        break;
+    case 2:
+        // 밭 3
+        gotoXY(x + 29, y + 3); printf("\033[0;32m .~~~-._\033[0m");
+        gotoXY(x + 27, y + 4); printf("\033[0;32m //) ' } //\033[0m");
+        gotoXY(x + 26, y + 5); printf("\033[0;32m (`\\ , /  ~)\033[0m");
+        gotoXY(x + 26, y + 6); printf("\033[0;32m `-.`\\/  _.'\033[0m");
+        gotoXY(x + 26, y + 7); printf("\033[0;32m    \\--/ \033[0m");
+        break;
+    case 3:
+        //밭 4
+        gotoXY(x + 42, y + 3); printf("\033[0;32m .~~~-._\033[0m");
+        gotoXY(x + 40, y + 4); printf("\033[0;32m //) ' } //\033[0m");
+        gotoXY(x + 39, y + 5); printf("\033[0;32m (`\\ , /  ~)\033[0m");
+        gotoXY(x + 39, y + 6); printf("\033[0;32m `-.`\\/  _.'\033[0m");
+        gotoXY(x + 39, y + 7); printf("\033[0;32m    \\--/ \033[0m");
+        break;
+    }
 }
 
-void Tomato()
+void Tomato(int index)
 {
     int x = 6;
     int y = 7;
 
-    // 밭 1
-    gotoXY(x + 6, y + 1); printf("\033[0;31m  ,\033[0;32mv\033[0;31m.\033[0m");
-    gotoXY(x+ 6, y + 2); printf("\033[0;31m ((  )\033[0m");
-    gotoXY(x + 2, y + 3); printf("\033[0;31m ,\033[0;32mv\033[0;31m.ㅤ`\"'\033[0m");
-    gotoXY(x, y + 4); printf("\033[0;31m ((  )\033[0m");
-    gotoXY(x, y + 5); printf("\033[0;31m  `\"'\033[0m");
-    gotoXY(x + 2, y + 6); printf("\033[0;31m ,\033[0;32mv\033[0;31m.\033[0m");
-    gotoXY(x + 1, y + 7); printf("\033[0;31m ((  )\033[0m");
-    gotoXY(x + 2, y + 8); printf("\033[0;31m `\"'\033[0m"); 
-
-    // 밭 2
-    gotoXY(x + 19, y + 1); printf("\033[0;31m  ,\033[0;32mv\033[0;31m.\033[0m");
-    gotoXY(x + 19, y + 2); printf("\033[0;31m ((  )\033[0m");
-    gotoXY(x + 15, y + 3); printf("\033[0;31m ,\033[0;32mv\033[0;31m.ㅤ`\"'\033[0m");
-    gotoXY(x + 13, y + 4); printf("\033[0;31m ((  )\033[0m");
-    gotoXY(x + 13, y + 5); printf("\033[0;31m  `\"'\033[0m");
-    gotoXY(x + 15, y + 6); printf("\033[0;31m ,\033[0;32mv\033[0;31m.\033[0m");
-    gotoXY(x + 14, y + 7); printf("\033[0;31m ((  )\033[0m");
-    gotoXY(x + 15, y + 8); printf("\033[0;31m `\"'\033[0m");
-
-    // 밭 3
-    gotoXY(x + 32, y + 1); printf("\033[0;31m  ,\033[0;32mv\033[0;31m.\033[0m");
-    gotoXY(x + 32, y + 2); printf("\033[0;31m ((  )\033[0m");
-    gotoXY(x + 28, y + 3); printf("\033[0;31m ,\033[0;32mv\033[0;31m.ㅤ`\"'\033[0m");
-    gotoXY(x + 26, y + 4); printf("\033[0;31m ((  )\033[0m");
-    gotoXY(x + 26, y + 5); printf("\033[0;31m  `\"'\033[0m");
-    gotoXY(x + 28, y + 6); printf("\033[0;31m ,\033[0;32mv\033[0;31m.\033[0m");
-    gotoXY(x + 27, y + 7); printf("\033[0;31m ((  )\033[0m");
-    gotoXY(x + 28, y + 8); printf("\033[0;31m `\"'\033[0m");
-
-    //밭 4
-    gotoXY(x + 45, y + 1); printf("\033[0;31m  ,\033[0;32mv\033[0;31m.\033[0m");
-    gotoXY(x + 45, y + 2); printf("\033[0;31m ((  )\033[0m");
-    gotoXY(x + 41, y + 3); printf("\033[0;31m ,\033[0;32mv\033[0;31m.ㅤ`\"'\033[0m");
-    gotoXY(x + 39, y + 4); printf("\033[0;31m ((  )\033[0m");
-    gotoXY(x + 39, y + 5); printf("\033[0;31m  `\"'\033[0m");
-    gotoXY(x + 41, y + 6); printf("\033[0;31m ,\033[0;32mv\033[0;31m.\033[0m");
-    gotoXY(x + 40, y + 7); printf("\033[0;31m ((  )\033[0m");
-    gotoXY(x + 41, y + 8); printf("\033[0;31m `\"'\033[0m");
+    switch (index) {
+    case 0:
+        // 밭 1
+        gotoXY(x + 6, y + 1); printf("\033[0;31m  ,\033[0;32mv\033[0;31m.\033[0m");
+        gotoXY(x + 6, y + 2); printf("\033[0;31m ((  )\033[0m");
+        gotoXY(x + 2, y + 3); printf("\033[0;31m ,\033[0;32mv\033[0;31m.ㅤ`\"'\033[0m");
+        gotoXY(x, y + 4); printf("\033[0;31m ((  )\033[0m");
+        gotoXY(x, y + 5); printf("\033[0;31m  `\"'\033[0m");
+        gotoXY(x + 2, y + 6); printf("\033[0;31m ,\033[0;32mv\033[0;31m.\033[0m");
+        gotoXY(x + 1, y + 7); printf("\033[0;31m ((  )\033[0m");
+        gotoXY(x + 2, y + 8); printf("\033[0;31m `\"'\033[0m");
+        break;
+    case 1:
+        // 밭 2
+        gotoXY(x + 19, y + 1); printf("\033[0;31m  ,\033[0;32mv\033[0;31m.\033[0m");
+        gotoXY(x + 19, y + 2); printf("\033[0;31m ((  )\033[0m");
+        gotoXY(x + 15, y + 3); printf("\033[0;31m ,\033[0;32mv\033[0;31m.ㅤ`\"'\033[0m");
+        gotoXY(x + 13, y + 4); printf("\033[0;31m ((  )\033[0m");
+        gotoXY(x + 13, y + 5); printf("\033[0;31m  `\"'\033[0m");
+        gotoXY(x + 15, y + 6); printf("\033[0;31m ,\033[0;32mv\033[0;31m.\033[0m");
+        gotoXY(x + 14, y + 7); printf("\033[0;31m ((  )\033[0m");
+        gotoXY(x + 15, y + 8); printf("\033[0;31m `\"'\033[0m");
+        break;
+    case 2:
+        // 밭 3
+        gotoXY(x + 32, y + 1); printf("\033[0;31m  ,\033[0;32mv\033[0;31m.\033[0m");
+        gotoXY(x + 32, y + 2); printf("\033[0;31m ((  )\033[0m");
+        gotoXY(x + 28, y + 3); printf("\033[0;31m ,\033[0;32mv\033[0;31m.ㅤ`\"'\033[0m");
+        gotoXY(x + 26, y + 4); printf("\033[0;31m ((  )\033[0m");
+        gotoXY(x + 26, y + 5); printf("\033[0;31m  `\"'\033[0m");
+        gotoXY(x + 28, y + 6); printf("\033[0;31m ,\033[0;32mv\033[0;31m.\033[0m");
+        gotoXY(x + 27, y + 7); printf("\033[0;31m ((  )\033[0m");
+        gotoXY(x + 28, y + 8); printf("\033[0;31m `\"'\033[0m");
+        break;
+    case 3:
+        //밭 4
+        gotoXY(x + 45, y + 1); printf("\033[0;31m  ,\033[0;32mv\033[0;31m.\033[0m");
+        gotoXY(x + 45, y + 2); printf("\033[0;31m ((  )\033[0m");
+        gotoXY(x + 41, y + 3); printf("\033[0;31m ,\033[0;32mv\033[0;31m.ㅤ`\"'\033[0m");
+        gotoXY(x + 39, y + 4); printf("\033[0;31m ((  )\033[0m");
+        gotoXY(x + 39, y + 5); printf("\033[0;31m  `\"'\033[0m");
+        gotoXY(x + 41, y + 6); printf("\033[0;31m ,\033[0;32mv\033[0;31m.\033[0m");
+        gotoXY(x + 40, y + 7); printf("\033[0;31m ((  )\033[0m");
+        gotoXY(x + 41, y + 8); printf("\033[0;31m `\"'\033[0m");
+        break;
+    }
 }
 
-void Wheat()
+void Wheat(int index)
 {
     int x = 4;
     int y = 7;
 
-    // 밭 1
-    gotoXY(x + 6, y + 1); printf("\033[1;33m  \\ /\033[0m");
-    gotoXY(x + 6, y + 2); printf("\033[1;33mˇ\\|/\033[0m");
-    gotoXY(x + 6, y + 3); printf("\033[1;33m  \\|/ˇ\033[0m");
-    gotoXY(x + 6, y + 4); printf("\033[1;33m   |\033[0m");
-    gotoXY(x + 2, y + 5); printf("\033[1;33m  \\ /\033[0m");
-    gotoXY(x + 2, y + 6); printf("\033[1;33mˇ\\|/\033[0m");
-    gotoXY(x + 2, y + 7); printf("\033[1;33m  \\|/ˇ\033[0m");
-    gotoXY(x + 2, y + 8); printf("\033[1;33m   |\033[0m");
-
-    // 밭 2
-    gotoXY(x + 19, y + 1); printf("\033[1;33m  \\ /\033[0m");
-    gotoXY(x + 19, y + 2); printf("\033[1;33mˇ\\|/\033[0m");
-    gotoXY(x + 19, y + 3); printf("\033[1;33m  \\|/ˇ\033[0m");
-    gotoXY(x + 19, y + 4); printf("\033[1;33m   |\033[0m");
-    gotoXY(x + 15, y + 5); printf("\033[1;33m  \\ /\033[0m");
-    gotoXY(x + 15, y + 6); printf("\033[1;33mˇ\\|/\033[0m");
-    gotoXY(x + 15, y + 7); printf("\033[1;33m  \\|/ˇ\033[0m");
-    gotoXY(x + 15, y + 8); printf("\033[1;33m   |\033[0m");
-
-    // 밭 3
-    gotoXY(x + 32, y + 1); printf("\033[1;33m  \\ /\033[0m");
-    gotoXY(x + 32, y + 2); printf("\033[1;33mˇ\\|/\033[0m");
-    gotoXY(x + 32, y + 3); printf("\033[1;33m  \\|/ˇ\033[0m");
-    gotoXY(x + 32, y + 4); printf("\033[1;33m   |\033[0m");
-    gotoXY(x + 28, y + 5); printf("\033[1;33m  \\ /\033[0m");
-    gotoXY(x + 28, y + 6); printf("\033[1;33mˇ\\|/\033[0m");
-    gotoXY(x + 28, y + 7); printf("\033[1;33m  \\|/ˇ\033[0m");
-    gotoXY(x + 28, y + 8); printf("\033[1;33m   |\033[0m");
-
-    //밭 4
-    gotoXY(x + 45, y + 1); printf("\033[1;33m  \\ /\033[0m");
-    gotoXY(x + 45, y + 2); printf("\033[1;33mˇ\\|/\033[0m");
-    gotoXY(x + 45, y + 3); printf("\033[1;33m  \\|/ˇ\033[0m");
-    gotoXY(x + 45, y + 4); printf("\033[1;33m   |\033[0m");
-    gotoXY(x + 41, y + 5); printf("\033[1;33m  \\ /\033[0m");
-    gotoXY(x + 41, y + 6); printf("\033[1;33mˇ\\|/\033[0m");
-    gotoXY(x + 41, y + 7); printf("\033[1;33m  \\|/ˇ\033[0m");
-    gotoXY(x + 41, y + 8); printf("\033[1;33m   |\033[0m");
+    switch (index) {
+    case 0:
+        // 밭 1
+        gotoXY(x + 6, y + 1); printf("\033[1;33m  \\ /\033[0m");
+        gotoXY(x + 6, y + 2); printf("\033[1;33mˇ\\|/\033[0m");
+        gotoXY(x + 6, y + 3); printf("\033[1;33m  \\|/ˇ\033[0m");
+        gotoXY(x + 6, y + 4); printf("\033[1;33m   |\033[0m");
+        gotoXY(x + 2, y + 5); printf("\033[1;33m  \\ /\033[0m");
+        gotoXY(x + 2, y + 6); printf("\033[1;33mˇ\\|/\033[0m");
+        gotoXY(x + 2, y + 7); printf("\033[1;33m  \\|/ˇ\033[0m");
+        gotoXY(x + 2, y + 8); printf("\033[1;33m   |\033[0m");
+        break;
+    case 1:
+        // 밭 2
+        gotoXY(x + 19, y + 1); printf("\033[1;33m  \\ /\033[0m");
+        gotoXY(x + 19, y + 2); printf("\033[1;33mˇ\\|/\033[0m");
+        gotoXY(x + 19, y + 3); printf("\033[1;33m  \\|/ˇ\033[0m");
+        gotoXY(x + 19, y + 4); printf("\033[1;33m   |\033[0m");
+        gotoXY(x + 15, y + 5); printf("\033[1;33m  \\ /\033[0m");
+        gotoXY(x + 15, y + 6); printf("\033[1;33mˇ\\|/\033[0m");
+        gotoXY(x + 15, y + 7); printf("\033[1;33m  \\|/ˇ\033[0m");
+        gotoXY(x + 15, y + 8); printf("\033[1;33m   |\033[0m");
+        break;
+    case 2:
+        // 밭 3
+        gotoXY(x + 32, y + 1); printf("\033[1;33m  \\ /\033[0m");
+        gotoXY(x + 32, y + 2); printf("\033[1;33mˇ\\|/\033[0m");
+        gotoXY(x + 32, y + 3); printf("\033[1;33m  \\|/ˇ\033[0m");
+        gotoXY(x + 32, y + 4); printf("\033[1;33m   |\033[0m");
+        gotoXY(x + 28, y + 5); printf("\033[1;33m  \\ /\033[0m");
+        gotoXY(x + 28, y + 6); printf("\033[1;33mˇ\\|/\033[0m");
+        gotoXY(x + 28, y + 7); printf("\033[1;33m  \\|/ˇ\033[0m");
+        gotoXY(x + 28, y + 8); printf("\033[1;33m   |\033[0m");
+        break;
+    case 3:
+        //밭 4
+        gotoXY(x + 45, y + 1); printf("\033[1;33m  \\ /\033[0m");
+        gotoXY(x + 45, y + 2); printf("\033[1;33mˇ\\|/\033[0m");
+        gotoXY(x + 45, y + 3); printf("\033[1;33m  \\|/ˇ\033[0m");
+        gotoXY(x + 45, y + 4); printf("\033[1;33m   |\033[0m");
+        gotoXY(x + 41, y + 5); printf("\033[1;33m  \\ /\033[0m");
+        gotoXY(x + 41, y + 6); printf("\033[1;33mˇ\\|/\033[0m");
+        gotoXY(x + 41, y + 7); printf("\033[1;33m  \\|/ˇ\033[0m");
+        gotoXY(x + 41, y + 8); printf("\033[1;33m   |\033[0m");
+        break;
+    }
 }
 
-void Corn()
+void Corn(int index)
 {
     int x = 3;
     int y = 8;
 
-    // 밭 1
-    gotoXY(x + 5, y + 1); printf("\033[1;32m |\\\033[1;33m∴ \033[1;32m/|");
-    gotoXY(x + 4, y + 2); printf(" |\\\033[1;33m∴∵\033[1;32m/|");
-    gotoXY(x + 5, y + 3); printf("\\\\\033[1;33m:::\033[1;32m//");
-    gotoXY(x + 5, y + 4); printf(" |---|");
-    gotoXY(x + 6, y + 5); printf(" :_:\033[0m");
-
-    // 밭 2
-    gotoXY(x + 18, y + 1); printf("\033[1;32m |\\\033[1;33m∴ \033[1;32m/|");
-    gotoXY(x + 17, y + 2); printf(" |\\\033[1;33m∴∵\033[1;32m/|");
-    gotoXY(x + 18, y + 3); printf("\\\\\033[1;33m:::\033[1;32m//");
-    gotoXY(x + 18, y + 4); printf(" |---|");
-    gotoXY(x + 19, y + 5); printf(" :_:\033[0m");
-
-    // 밭 3
-    gotoXY(x + 31, y + 1); printf("\033[1;32m |\\\033[1;33m∴ \033[1;32m/|");
-    gotoXY(x + 30, y + 2); printf(" |\\\033[1;33m∴∵\033[1;32m/|");
-    gotoXY(x + 31, y + 3); printf("\\\\\033[1;33m:::\033[1;32m//");
-    gotoXY(x + 31, y + 4); printf(" |---|");
-    gotoXY(x + 32, y + 5); printf(" :_:\033[0m");
-
-    //밭 4
-    gotoXY(x + 44, y + 1); printf("\033[1;32m |\\\033[1;33m∴ \033[1;32m/|");
-    gotoXY(x + 43, y + 2); printf(" |\\\033[1;33m∴∵\033[1;32m/|");
-    gotoXY(x + 44, y + 3); printf("\\\\\033[1;33m:::\033[1;32m//");
-    gotoXY(x + 44, y + 4); printf(" |---|");
-    gotoXY(x + 45, y + 5); printf(" :_:\033[0m");
+    switch (index) {
+    case 0:
+        // 밭 1
+        gotoXY(x + 5, y + 1); printf("\033[1;32m |\\\033[1;33m∴ \033[1;32m/|");
+        gotoXY(x + 4, y + 2); printf(" |\\\033[1;33m∴∵\033[1;32m/|");
+        gotoXY(x + 5, y + 3); printf("\\\\\033[1;33m:::\033[1;32m//");
+        gotoXY(x + 5, y + 4); printf(" |---|");
+        gotoXY(x + 6, y + 5); printf(" :_:\033[0m");
+        break;
+    case 1:
+        // 밭 2
+        gotoXY(x + 18, y + 1); printf("\033[1;32m |\\\033[1;33m∴ \033[1;32m/|");
+        gotoXY(x + 17, y + 2); printf(" |\\\033[1;33m∴∵\033[1;32m/|");
+        gotoXY(x + 18, y + 3); printf("\\\\\033[1;33m:::\033[1;32m//");
+        gotoXY(x + 18, y + 4); printf(" |---|");
+        gotoXY(x + 19, y + 5); printf(" :_:\033[0m");
+        break;
+    case 2:
+        // 밭 3
+        gotoXY(x + 31, y + 1); printf("\033[1;32m |\\\033[1;33m∴ \033[1;32m/|");
+        gotoXY(x + 30, y + 2); printf(" |\\\033[1;33m∴∵\033[1;32m/|");
+        gotoXY(x + 31, y + 3); printf("\\\\\033[1;33m:::\033[1;32m//");
+        gotoXY(x + 31, y + 4); printf(" |---|");
+        gotoXY(x + 32, y + 5); printf(" :_:\033[0m");
+        break;
+    case 3:
+        //밭 4
+        gotoXY(x + 44, y + 1); printf("\033[1;32m |\\\033[1;33m∴ \033[1;32m/|");
+        gotoXY(x + 43, y + 2); printf(" |\\\033[1;33m∴∵\033[1;32m/|");
+        gotoXY(x + 44, y + 3); printf("\\\\\033[1;33m:::\033[1;32m//");
+        gotoXY(x + 44, y + 4); printf(" |---|");
+        gotoXY(x + 45, y + 5); printf(" :_:\033[0m");
+        break;
+    }
 }
 
 // 바구니
@@ -650,15 +689,14 @@ void AnimalPortal()
     gotoXY(x, y + 6); printf("┗━━━━━┛\033[0m");
 }
 
-//  **사육장 전부 한칸씩만 내리면 좋을듯**
 // 동물 농장: 사육장
-void MapAnimal()
+void MapAnimal(char** isBreed)
 {
     int x = 5;
     int z = 25;
     int q = 45;
-    int y = 2;
-    int r = 10;
+    int y = 3;
+    int r = 11;
 
     Frame();
     //사육장1
@@ -707,7 +745,7 @@ void MapAnimal()
     gotoXY(x + 13, r + 3); printf("│");
     gotoXY(x, r + 4); printf("│");
     gotoXY(x + 13, r + 4); printf("│");
-    gotoXY(x, r + 5); printf("└────────────┘");
+    gotoXY(x, r + 5); printf("└─────%s───%s────┘", isBreed[0], NONE);
 
     // 사육장5
     gotoXY(z, r); printf("┌────────────┐");
@@ -719,7 +757,7 @@ void MapAnimal()
     gotoXY(z + 13, r + 3); printf("│");
     gotoXY(z, r + 4); printf("│");
     gotoXY(z + 13, r + 4); printf("│");
-    gotoXY(z, r + 5); printf("└────────────┘");
+    gotoXY(z, r + 5); printf("└─────%s───%s────┘", isBreed[1], NONE);
 
     //사육장6
     gotoXY(q, r); printf("┌────────────┐");
@@ -731,139 +769,154 @@ void MapAnimal()
     gotoXY(q + 13, r + 3); printf("│");
     gotoXY(q, r + 4); printf("│");
     gotoXY(q + 13, r + 4); printf("│");
-    gotoXY(q, r + 5); printf("└────────────┘");
-
-    Basket();
-    AnimalPortal();
+    gotoXY(q, r + 5); printf("└─────%s───%s────┘", isBreed[2], NONE);
 }
 
-void Cow()
+void Cow(int index)
 {
     int x = 9;
     int z = 29;
     int q = 49;
-    int y = 2;
-    int r = 10;
+    int y = 3;
+    int r = 11;
 
-    // 사육장1 - 소
-    gotoXY(x - 2, y + 1); printf("\033[1;33m\|/     (__)");
-    gotoXY(x - 1, y + 2); printf("`\-----(oo)");
-    gotoXY(x, y + 3); printf("||   (__)");
-    gotoXY(x, y + 4); printf("||w--||\033[0m");
+    switch (index) {
+    case 0:
+        // 사육장1 - 소
+        gotoXY(x - 2, y + 1); printf("\033[1;33m\\|/    (__)");
+        gotoXY(x - 1, y + 2); printf("`\\----(oo)");
+        gotoXY(x, y + 3); printf("||   (__)");
+        gotoXY(x, y + 4); printf("||w--||\033[0m");
 
-    // 사육장2 - 소
-    gotoXY(z - 2, y + 1); printf("\033[1;33m\|/     (__)");
-    gotoXY(z - 1, y + 2); printf("`\-----(oo)");
-    gotoXY(z, y + 3); printf("||   (__)");
-    gotoXY(z, y + 4); printf("||w--||\033[0m");
+        // 사육장4 - 소
+        gotoXY(x - 2, r + 1); printf("\033[1;33m\\|/    (__)");
+        gotoXY(x - 1, r + 2); printf("`\\----(oo)");
+        gotoXY(x, r + 3); printf("||   (__)");
+        gotoXY(x, r + 4); printf("||w--||\033[0m");
+        break;
+    case 1:
+        // 사육장2 - 소
+        gotoXY(z - 2, y + 1); printf("\033[1;33m\\|/    (__)");
+        gotoXY(z - 1, y + 2); printf("`\\----(oo)");
+        gotoXY(z, y + 3); printf("||   (__)");
+        gotoXY(z, y + 4); printf("||w--||\033[0m");
 
-    // 사육장3 - 소
-    gotoXY(q - 2, y + 1); printf("\033[1;33m\|/     (__)");
-    gotoXY(q - 1, y + 2); printf("`\-----(oo)");
-    gotoXY(q, y + 3); printf("||   (__)");
-    gotoXY(q, y + 4); printf("||w--||\033[0m");
+        // 사육장5 - 소
+        gotoXY(z - 2, r + 1); printf("\033[1;33m\\|/    (__)");
+        gotoXY(z - 1, r + 2); printf("`\\----(oo)");
+        gotoXY(z, r + 3); printf("||   (__)");
+        gotoXY(z, r + 4); printf("||w--||\033[0m");
+        break;
+    case 2:
+        // 사육장3 - 소
+        gotoXY(q - 2, y + 1); printf("\033[1;33m\\|/    (__)");
+        gotoXY(q - 1, y + 2); printf("`\\----(oo)");
+        gotoXY(q, y + 3); printf("||   (__)");
+        gotoXY(q, y + 4); printf("||w--||\033[0m");
 
-    // 사육장4 - 소
-    gotoXY(x - 2, r + 1); printf("\033[1;33m\|/     (__)");
-    gotoXY(x - 1, r + 2); printf("`\-----(oo)");
-    gotoXY(x, r + 3); printf("||   (__)");
-    gotoXY(x, r + 4); printf("||w--||\033[0m");
-
-    // 사육장5 - 소
-    gotoXY(z - 2, r + 1); printf("\033[1;33m\|/     (__)");
-    gotoXY(z - 1, r + 2); printf("`\-----(oo)");
-    gotoXY(z, r + 3); printf("||   (__)");
-    gotoXY(z, r + 4); printf("||w--||\033[0m");
-
-    // 사육장6 - 소
-    gotoXY(q - 2, r + 1); printf("\033[1;33m\|/     (__)");
-    gotoXY(q - 1, r + 2); printf("`\-----(oo)");
-    gotoXY(q, r + 3); printf("||   (__)");
-    gotoXY(q, r + 4); printf("||w--||\033[0m");
+        // 사육장6 - 소
+        gotoXY(q - 2, r + 1); printf("\033[1;33m\\|/    (__)");
+        gotoXY(q - 1, r + 2); printf("`\\----(oo)");
+        gotoXY(q, r + 3); printf("||   (__)");
+        gotoXY(q, r + 4); printf("||w--||\033[0m");
+        break;
+    }
 }
 
-void Pig()
+void Pig(int index)
 {
     int x = 8;
     int z = 28;
     int q = 48;
-    int y = 2;
-    int r = 10;
+    int y = 3;
+    int r = 11;
 
-    // 사육장1 - 돼지
-    gotoXY(x - 1, y + 2); printf("\033[1;31m  ⌒⌒__");
-    gotoXY(x, y + 3); printf("c' '    )@");
-    gotoXY(x, y + 4); printf("  '' ''\033[0m");
+    switch (index) {
+    case 0:
+        // 사육장1 - 돼지
+        gotoXY(x - 1, y + 2); printf("\033[1;31m  ⌒⌒__");
+        gotoXY(x, y + 3); printf("c' '    )@");
+        gotoXY(x, y + 4); printf("  '' ''\033[0m");
 
-    // 사육장2 - 돼지
-    gotoXY(z - 1, y + 2); printf("\033[1;31m  ⌒⌒__");
-    gotoXY(z, y + 3); printf("c' '    )@");
-    gotoXY(z, y + 4); printf("  ' ' ' '\033[0m");
+        // 사육장4 - 돼지
+        gotoXY(x - 1, r + 2); printf("\033[1;31m  ⌒⌒__");
+        gotoXY(x, r + 3); printf("c' '    )@");
+        gotoXY(x, r + 4); printf("  ' ' ' '\033[0m");
+        break;
+    case 1:
+        // 사육장2 - 돼지
+        gotoXY(z - 1, y + 2); printf("\033[1;31m  ⌒⌒__");
+        gotoXY(z, y + 3); printf("c' '    )@");
+        gotoXY(z, y + 4); printf("  ' ' ' '\033[0m");
 
-    // 사육장3 - 돼지
-    gotoXY(q - 1, y + 2); printf("\033[1;31m  ⌒⌒__");
-    gotoXY(q, y + 3); printf("c' '    )@");
-    gotoXY(q, y + 4); printf("  ' ' ' '\033[0m");
+        // 사육장5 - 돼지
+        gotoXY(z - 1, r + 2); printf("\033[1;31m  ⌒⌒__");
+        gotoXY(z, r + 3); printf("c' '    )@");
+        gotoXY(z, r + 4); printf("  ' ' ' '\033[0m");
+        break;
+    case 2:
+        // 사육장3 - 돼지
+        gotoXY(q - 1, y + 2); printf("\033[1;31m  ⌒⌒__");
+        gotoXY(q, y + 3); printf("c' '    )@");
+        gotoXY(q, y + 4); printf("  ' ' ' '\033[0m");
 
-    // 사육장4 - 돼지
-    gotoXY(x - 1, r + 2); printf("\033[1;31m  ⌒⌒__");
-    gotoXY(x, r + 3); printf("c' '    )@");
-    gotoXY(x, r + 4); printf("  ' ' ' '\033[0m");
-
-    // 사육장5 - 돼지
-    gotoXY(z - 1, r + 2); printf("\033[1;31m  ⌒⌒__");
-    gotoXY(z, r + 3); printf("c' '    )@");
-    gotoXY(z, r + 4); printf("  ' ' ' '\033[0m");
-
-    // 사육장6 - 돼지
-    gotoXY(q - 1, r + 2); printf("\033[1;31m  ⌒⌒__");
-    gotoXY(q, r + 3); printf("c' '    )@");
-    gotoXY(q, r + 4); printf("  ' ' ' '\033[0m");
+        // 사육장6 - 돼지
+        gotoXY(q - 1, r + 2); printf("\033[1;31m  ⌒⌒__");
+        gotoXY(q, r + 3); printf("c' '    )@");
+        gotoXY(q, r + 4); printf("  ' ' ' '\033[0m");
+        break;
+    }
 }
 
-void Chicken()
+void Chicken(int index)
 {
     int x = 9;
     int z = 29;
     int q = 49;
-    int y = 2;
-    int r = 10;
+    int y = 3;
+    int r = 11;
 
-    // 사육장1 - 닭
-    gotoXY(x, y + 1); printf("\033[0;33m\MM");
-    gotoXY(x, y + 2); printf("<' \\__/|");
-    gotoXY(x, y + 3); printf(" \\_  _/ ");
-    gotoXY(x, y + 4); printf("  ][ \033[0m");
+    switch (index) {
+    case 0:
+        // 사육장1 - 닭
+        gotoXY(x, y + 1); printf("\033[0;33m\\MM");
+        gotoXY(x, y + 2); printf("<' \\__/|");
+        gotoXY(x, y + 3); printf(" \\_  _/ ");
+        gotoXY(x, y + 4); printf("  ][ \033[0m");
 
-    // 사육장2 - 닭
-    gotoXY(z, y + 1); printf("\033[0;33m\MM");
-    gotoXY(z, y + 2); printf("<' \\__/|");
-    gotoXY(z, y + 3); printf(" \\_  _/ ");
-    gotoXY(z, y + 4); printf("  ][ \033[0m");
+        // 사육장4 - 닭
+        gotoXY(x, r + 1); printf("\033[0;33m\\MM");
+        gotoXY(x, r + 2); printf("<' \\__/|");
+        gotoXY(x, r + 3); printf(" \\_  _/ ");
+        gotoXY(x, r + 4); printf("  ][ \033[0m");
+        break;
+    case 1:
+        // 사육장2 - 닭
+        gotoXY(z, y + 1); printf("\033[0;33m\\MM");
+        gotoXY(z, y + 2); printf("<' \\__/|");
+        gotoXY(z, y + 3); printf(" \\_  _/ ");
+        gotoXY(z, y + 4); printf("  ][ \033[0m");
 
-    // 사육장3 - 닭
-    gotoXY(q, y + 1); printf("\033[0;33m\MM");
-    gotoXY(q, y + 2); printf("<' \\__/|");
-    gotoXY(q, y + 3); printf(" \\_  _/ ");
-    gotoXY(q, y + 4); printf("  ][ \033[0m");
+        // 사육장5 - 닭
+        gotoXY(z, r + 1); printf("\033[0;33m\\MM");
+        gotoXY(z - 1, r + 2); printf("<' \\__/|");
+        gotoXY(z, r + 3); printf(" \\_  _/ ");
+        gotoXY(z, r + 4); printf("  ][ \033[0m");
+        break;
+    case 2:
+        // 사육장3 - 닭
+        gotoXY(q, y + 1); printf("\033[0;33m\\MM");
+        gotoXY(q, y + 2); printf("<' \\__/|");
+        gotoXY(q, y + 3); printf(" \\_  _/ ");
+        gotoXY(q, y + 4); printf("  ][ \033[0m");
 
-    // 사육장4 - 닭
-    gotoXY(x, r + 1); printf("\033[0;33m\MM");
-    gotoXY(x, r + 2); printf("<' \\__/|");
-    gotoXY(x, r + 3); printf(" \\_  _/ ");
-    gotoXY(x, r + 4); printf("  ][ \033[0m");
-
-    // 사육장5 - 닭
-    gotoXY(z, r + 1); printf("\033[0;33m\MM");
-    gotoXY(z - 1, r + 2); printf("<' \\__/|");
-    gotoXY(z, r + 3); printf(" \\_  _/ ");
-    gotoXY(z, r + 4); printf("  ][ \033[0m");
-
-    // 사육장6 - 닭
-    gotoXY(q, r + 1); printf("\033[0;33m\MM");
-    gotoXY(q - 1, r + 2); printf("<' \\__/|");
-    gotoXY(q, r + 3); printf(" \\_  _/ ");
-    gotoXY(q, r + 4); printf("  ][ \033[0m");
+        // 사육장6 - 닭
+        gotoXY(q, r + 1); printf("\033[0;33m\\MM");
+        gotoXY(q - 1, r + 2); printf("<' \\__/|");
+        gotoXY(q, r + 3); printf(" \\_  _/ ");
+        gotoXY(q, r + 4); printf("  ][ \033[0m");
+        break;
+    }
 }
 
 // 사료 급여 선택
@@ -890,6 +943,7 @@ void Arr()
     int x = 12;
     int z = 2;
     int y = 22;
+
     gotoXY(z - 2, y); printf("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
     gotoXY(z - 1, y + 1); printf("▷ 무엇을 배치하겠습니까?");
 
